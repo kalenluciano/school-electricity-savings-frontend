@@ -6,11 +6,10 @@ import {BASE_URL} from '../globals'
 
 export default function CalculatorForm() {
     const initialFormValues = {
-        street_address: "",
-        street_address_2: "",
+        streetAddress: "",
         city: "",
         state: "",
-        zip_code: ""
+        zipCode: ""
     }
 
     const [formValues, setFormValues] = useState(initialFormValues)
@@ -21,21 +20,20 @@ export default function CalculatorForm() {
 
     const handleSubmit = async (e: any) => {
         e.preventDefault()
-        await axios.get(`${BASE_URL}/`)
+        const result = await axios.get(`${BASE_URL}/address/${formValues.streetAddress}/${formValues.city}/${formValues.state}/${formValues.zipCode}`)
+        console.log(result)
     }
     
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="street_address"></label>
-            <input onChange={handleChange} name="street_address" placeholder="633 Clark St" />
-            <label htmlFor="street_address_2"></label>
-            <input onChange={handleChange} name="street_address_2" placeholder="Apt 1" />
+            <label htmlFor="streetAddress"></label>
+            <input onChange={handleChange} name="streetAddress" placeholder="633 Clark St" />
             <label htmlFor="city"></label>
             <input onChange={handleChange} name="city" placeholder="Evanston" />
             <label htmlFor="state"></label>
             <input onChange={handleChange} name="state" placeholder="IL" />
-            <label htmlFor="zip_code"></label>
-            <input onChange={handleChange} name="zip_code" placeholder="60208" />
+            <label htmlFor="zipCode"></label>
+            <input onChange={handleChange} name="zipCode" placeholder="60208" />
             <button>Search</button>
         </form>
     )
