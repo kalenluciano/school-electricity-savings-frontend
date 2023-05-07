@@ -15,11 +15,12 @@ export default function CalculatorForm() {
     const [formValues, setFormValues] = useState(initialFormValues)
 
     const handleChange = (e: any) => {
-        setFormValues({...formValues, [e.target.name]: e.target.value})
+        setFormValues({...formValues, [e.target.name]: e.target.value.replaceAll(" ", "+")})
     }
 
     const handleSubmit = async (e: any) => {
         e.preventDefault()
+        console.log(formValues)
         const result = await axios.get(`${BASE_URL}/address/${formValues.streetAddress}/${formValues.city}/${formValues.state}/${formValues.zipCode}`)
         console.log(result)
     }
