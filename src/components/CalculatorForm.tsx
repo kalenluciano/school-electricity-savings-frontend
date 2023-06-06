@@ -1,10 +1,30 @@
 'use client'
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import axios from 'axios'
 import {BASE_URL} from '../globals'
 
-export default function CalculatorForm() {
+type CalculatorFormProps = {
+    savingsInfo?: {
+        id: number,
+        item: string, 
+        description: string,
+        amount?: number, 
+        createdAt: string,
+        updatedAt: string,
+        main_savings?: {
+            id: number,
+            item: string,
+            description: string,
+            amount: number,
+            createdAt: string,
+            updatedAt: string,
+        }[]
+    },
+    setSavingsInfo: React.Dispatch<React.SetStateAction<any>>
+}
+
+const CalculatorForm: React.FC<CalculatorFormProps> = ({savingsInfo, setSavingsInfo}) => {
     const initialFormValues = {
         streetAddress: "",
         city: "",
@@ -26,16 +46,21 @@ export default function CalculatorForm() {
     }
     
     return (
+        <div>
+        <h2>Enter your school&apos;s information</h2>
         <form onSubmit={handleSubmit}>
-            <label htmlFor="streetAddress"></label>
+            <label htmlFor="streetAddress">Street Address</label>
             <input onChange={handleChange} name="streetAddress" placeholder="633 Clark St" />
-            <label htmlFor="city"></label>
+            <label htmlFor="city">City</label>
             <input onChange={handleChange} name="city" placeholder="Evanston" />
-            <label htmlFor="state"></label>
+            <label htmlFor="state">State</label>
             <input onChange={handleChange} name="state" placeholder="IL" />
-            <label htmlFor="zipCode"></label>
+            <label htmlFor="zipCode">Zip Code</label>
             <input onChange={handleChange} name="zipCode" placeholder="60208" />
             <button>Search</button>
         </form>
+        </div>
     )
 }
+
+export default CalculatorForm
