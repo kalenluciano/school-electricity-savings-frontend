@@ -38,7 +38,7 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated } : CalculatorF
     }
     
     return (
-        <div>
+        <div className="calculator-form">
         <h2>Enter your school&apos;s information</h2>
         <form onSubmit={handleSubmit}>
             <label htmlFor="streetAddress">Street Address</label>
@@ -49,7 +49,7 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated } : CalculatorF
             <input onChange={handleChange} name="state" placeholder="IL" />
             <label htmlFor="zipCode">Zip Code</label>
             <input onChange={handleChange} name="zipCode" placeholder="60208" />
-            <button>Search</button>
+            <button className="search-button">Search</button>
         </form>
         </div>
     )
