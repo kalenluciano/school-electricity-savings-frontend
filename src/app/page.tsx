@@ -40,13 +40,15 @@ export default function Home() {
 
   return (
     <main>
-      <h2>School Savings Calculator</h2>
-      <h1>How much money can your school save with the Inflation Reduction Act?</h1>
-      <CalculatorForm setCalculatedSavings={setCalculatedSavings} toggleCalculated={toggleCalculated}/>
-      <FAQ />
-      <h2>School Electrification Incentives</h2>
-      <p>All the savings your school may be eligible for!</p>
-      <SavingsTable savingsInfo={savingsInfo} calculatedSavings={calculatedSavings} calculated={calculated}/>
+      <div className="header">
+        <h2>Clean Energy Savings Calculator for Schools</h2>
+        <h1>How much money can your school save with the Inflation Reduction Act?</h1>
+      </div>
+      <div className="content">
+        <CalculatorForm setCalculatedSavings={setCalculatedSavings} toggleCalculated={toggleCalculated}/>
+        <FAQ />
+        <SavingsTable savingsInfo={savingsInfo} calculatedSavings={calculatedSavings} calculated={calculated}/>
+      </div>
     </main>
   )
 }

@@ -1,3 +1,127 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px black solid; */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fefce8;
+}
+
+main {
+    width: 100%;
+}
+
+.header {
+    padding: 2rem;
+    background-color: #fef9c3;
+    text-align: center;
+}
+
+h2 {
+    font-size: large;
+    margin: .5rem 0 .5rem 0;
+    font-weight: 500
+}
+
+h1 {
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #fefce8;
+}
+
+.calculator-form {
+    padding: 1rem 0;
+    max-width: 750px;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+}
+
+input {
+    border: 1px gray solid;
+    padding: .25rem;
+    border-radius: .25rem;
+}
+
+form label, form input {
+    margin: .25rem;
+}
+
+.search-button {
+    padding: .25rem;
+    background-color: orange;
+    border-radius: .25rem;
+    margin: .25rem 45% .25rem 45%;
+}
+
+.faq {
+    max-width: 750px;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.faq-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.more-info-button {
+    padding: 0 .5rem;
+    background-color: orange;
+    border-radius: .25rem;
+}
+
+.savings-table-section {
+    max-width: 750px;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.savings-header {
+    padding-bottom: 1rem;
+}
+
+.savings-table {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.savings-table-headers {
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+}
+
+.savings-item {
+    width: 40%
+}
+
+.more-info {
+    width: 15%
+}
+
+.savings-row {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 0;
+}
