@@ -10,9 +10,11 @@ const FAQ = () => {
     }
 
     return (
-        <div>
+        <div className="faq">
+            <div className="faq-header">
             <h2>Frequently Asked Questions</h2>
-            <button onClick={handleChange}>Click</button>
+            <button className="more-info-button" onClick={handleChange}>More Info</button>
+            </div>
             {clicked && <div>
                 <h3>Question</h3> 
                 <p>Answer</p>
