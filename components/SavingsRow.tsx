@@ -27,10 +27,10 @@ const SavingsRow = ({savings}: SavingsRow) => {
     }
 
     return (
-        <div>
-            <p>{savings.item}</p>
+        <div className="savings-row">
+            <p className="savings-item">{savings.item}</p>
             <p>{savings.amount ? savings.amount + '%' : 'Varies'}</p>
-            <button onClick={handleChange}>More Info</button>
+            <button className="more-info more-info-button" onClick={handleChange}>More Info</button>
             {clicked && <div>
                 <h1>{savings.item}</h1>
                 <h1>{savings.amount ? savings.amount + '%' : 'Varies'}</h1>
