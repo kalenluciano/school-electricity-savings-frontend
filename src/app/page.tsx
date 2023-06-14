@@ -28,6 +28,7 @@ export default function Home() {
   const [savingsInfo, setSavingsInfo] = useState<SavingsInfo>([])
   const [calculatedSavings, setCalculatedSavings] = useState({})
   const [calculated, toggleCalculated] = useState(false)
+  const [calculating, toggleCalculating] = useState(false)
 
   const getInitialSavings = async () => {
     const result = await axios.get(`${BASE_URL}/savings`)
@@ -45,9 +46,9 @@ export default function Home() {
         <h1>How much money can your school save with the Inflation Reduction Act?</h1>
       </div>
       <div className="content">
-        <CalculatorForm setCalculatedSavings={setCalculatedSavings} toggleCalculated={toggleCalculated}/>
+        <CalculatorForm setCalculatedSavings={setCalculatedSavings} toggleCalculated={toggleCalculated} toggleCalculating={toggleCalculating}/>
         <FAQ />
-        <SavingsTable savingsInfo={savingsInfo} calculatedSavings={calculatedSavings} calculated={calculated}/>
+        <SavingsTable savingsInfo={savingsInfo} calculatedSavings={calculatedSavings} calculated={calculated} calculating={calculating}/>
       </div>
     </main>
   )

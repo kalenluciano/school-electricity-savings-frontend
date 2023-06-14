@@ -1,12 +1,13 @@
 'use client'
 
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import axios from 'axios'
 import {BASE_URL} from '../src/globals'
 
 type CalculatorFormProps = {
     setCalculatedSavings: React.Dispatch<React.SetStateAction<any>>,
-    toggleCalculated: React.Dispatch<React.SetStateAction<any>>
+    toggleCalculated: React.Dispatch<React.SetStateAction<any>>,
+    toggleCalculating: React.Dispatch<React.SetStateAction<any>>
 }
 
 interface FormValues {
@@ -16,7 +17,7 @@ interface FormValues {
     zipCode: string
 }
 
-const CalculatorForm = ({ setCalculatedSavings, toggleCalculated } : CalculatorFormProps) => {
+const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculating } : CalculatorFormProps) => {
     const initialFormValues = {
         streetAddress: "",
         city: "",
@@ -32,8 +33,10 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated } : CalculatorF
 
     const handleSubmit = async (e: any) => {
         e.preventDefault()
+        toggleCalculating(true)
         const result = await axios.get(`${BASE_URL}/address/${formValues.streetAddress}/${formValues.city}/${formValues.state}/${formValues.zipCode}`)
         setCalculatedSavings(result.data)
+        toggleCalculating(false)
         toggleCalculated(Object.keys(result.data).length > 0)
     }
     

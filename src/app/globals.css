@@ -106,6 +106,10 @@ form label, form input {
     padding: 1rem 0;
 }
 
+.savings-table-section h1 {
+    text-align: center;
+}
+
 .savings-header {
     padding-bottom: 1rem;
 }
