@@ -29,17 +29,16 @@ const SavingsRow = ({savings}: SavingsRow) => {
     return (
         <div className="savings-row">
             <p className="savings-item">{savings.item}</p>
-            <p>{savings.amount ? savings.amount + '%' : 'Varies'}</p>
+            <p className="amount">{savings.amount ? savings.amount + '%' : 'Varies'}</p>
             <button className="more-info more-info-button" onClick={handleChange}>More Info</button>
-            {clicked && <div>
-                <h1>{savings.item}</h1>
-                <h1>{savings.amount ? savings.amount + '%' : 'Varies'}</h1>
-                <p>{savings.description}</p>
+            {clicked && <div className="savings-more-info-section">
+                <p className="savings-description">{savings.description}</p>
                 {savings.main_savings?.map((bonus) => (
-                    <div key={bonus.id}>
-                        <h1>{bonus.item}</h1>
-                        <h1>{bonus.amount}</h1>
-                        <p>{bonus.description}</p>
+                    <div key={bonus.id} className="savings-row">
+                        <p className="savings-item">{bonus.item}</p>
+                        <p className="amount">{bonus.amount + '%'}</p>
+                        <p className="more-info"></p>
+                        <p className="savings-description">{bonus.description}</p>
                     </div>
                 ))}
             </div>}

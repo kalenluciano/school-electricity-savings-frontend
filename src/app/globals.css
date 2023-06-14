@@ -113,15 +113,32 @@ form label, form input {
 }
 
 .savings-item {
-    width: 40%
+    width: 60%
+}
+
+.amount {
+    width: 25%;
 }
 
 .more-info {
     width: 15%
 }
 
+.savings-description {
+    width: 100%;
+}
+
 .savings-row {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    padding: .5rem 0;
+}
+
+.savings-more-info-section {
+    width: 100%;
+}
+
+.savings-more-info-section p {
     padding: .5rem 0;
 }

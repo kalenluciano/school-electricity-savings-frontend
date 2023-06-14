@@ -50,7 +50,7 @@ const SavingsTable: React.FC<SavingsInfoProps> = ({savingsInfo, calculatedSaving
             <div>
                 <div className='savings-table-headers'>
                     <h3 className='savings-item'>Item</h3>
-                    <h3>Amount</h3>
+                    <h3 className='amount'>Amount</h3>
                     <div className='more-info'></div>
                 </div>
                 
