@@ -44,7 +44,7 @@ const SavingsTable: React.FC<SavingsInfoProps> = ({savingsInfo, calculatedSaving
         <div className='savings-table-section'>
             <div className='savings-header'>
                 <h2>School Electrification Incentives</h2>
-                <p>All the savings your school may be eligible for!</p>
+                {calculated ? <p>All the total savings for your school! Click on more info to see what bonuses were added to these totals.</p> : <p>All the minimum savings your school is eligible for!</p>}
             </div>
 
             <div>
