@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <main>
       <div className="header">
-        <h2>Clean Energy Savings Calculator for Schools</h2>
+        <h2>School Electricity Savings Calculator</h2>
         <h1>How much money can your school save with the Inflation Reduction Act?</h1>
       </div>
       <div className="content">
