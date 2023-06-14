@@ -1,34 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# School Electricity Savings Calculator Frontend
 
-## Getting Started
+### By: Kalen Luciano: [GitHub](https://github.com/kalenluciano) | [LinkedIn](https://www.linkedin.com/in/kalenluciano/)
 
-First, run the development server:
+#### [School Electricity Savings Calculator Backend](https://github.com/kalenluciano/school-electricity-savings-frontend)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+#### [Deployed Site](https://school-electricity-savings.herokuapp.com/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### **_Description_**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The Inflation Reduction Act provided significant incentives to drive America toward a clean energy future. However, the ever-evolving guidelines surrounding the tax incentives can make it difficult to understand what credits apply to each community. I studied the legislation and the latest guidance from the IRS and EPA to determine how schools can save money converting to clean energy.
 
-## Learn More
+With this understanding, I developed a user-friendly calculator that empowers environmental activists to determine the potential savings their schools are eligible for. By leveraging Census and Google Maps APIs and technologies and frameworks such as TypeScript, Next.js, Express, PostgreSQL, and Node.js, I built a full-stack application that helps schools make informed decisions about their clean energy transition.
 
-To learn more about Next.js, take a look at the following resources:
+This app was inspired by (Rewiring America's household IRA savings calculator)[https://www.rewiringamerica.org/app/ira-calculator].
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### **_Getting Started_**
 
-## Deploy on Vercel
+-   `Fork` and `clone`
+-   `cd` into the directory
+-   Run `npm run dev`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### **_Technologies_**
+
+-   TypeScript
+-   Next.js
+-   CSS
+-   HTML
+
+---
+
+### **_Future Updates_**
+
+-   [ ] Display data on how a school is meeting each qualification. The data is stored in the results from the API call. The frontend just needs to be built out to display this data.
+-   [ ] Add in more information about the benefits for each of these incentives in helping address the climate crisis
+-   [ ] Add more to the FAQ section
+-   [ ] Adjust the website based on more usability testing
