@@ -85,6 +85,15 @@ form label, form input {
     justify-content: space-between;
 }
 
+.faq-info h3 {
+    padding-top: .5rem;
+    font-weight: 500;
+}
+
+.faq-info p {
+    padding: .5rem 0 .75rem 0;
+}
+
 .more-info-button {
     padding: 0 .5rem;
     background-color: orange;
