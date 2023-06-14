@@ -45,13 +45,13 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
         <h2>Enter your school&apos;s information</h2>
         <form onSubmit={handleSubmit}>
             <label htmlFor="streetAddress">Street Address</label>
-            <input onChange={handleChange} name="streetAddress" placeholder="633 Clark St" />
+            <input onChange={handleChange} name="streetAddress" placeholder="633 Clark St" required/>
             <label htmlFor="city">City</label>
-            <input onChange={handleChange} name="city" placeholder="Evanston" />
+            <input onChange={handleChange} name="city" placeholder="Evanston" required />
             <label htmlFor="state">State</label>
-            <input onChange={handleChange} name="state" placeholder="IL" />
+            <input onChange={handleChange} name="state" placeholder="IL" required />
             <label htmlFor="zipCode">Zip Code</label>
-            <input onChange={handleChange} name="zipCode" placeholder="60208" />
+            <input onChange={handleChange} name="zipCode" placeholder="60208" required />
             <button className="search-button">Search</button>
         </form>
         </div>
