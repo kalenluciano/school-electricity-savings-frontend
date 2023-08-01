@@ -18,8 +18,8 @@ type CalculatorFormProps = {
 // }
 
 const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculating } : CalculatorFormProps) => {
-    const autoCompleteRef = useRef("")
-    const inputRef = useRef("")
+    const autoCompleteRef = useRef<HTMLInputElement | null>()
+    const inputRef = useRef<HTMLInputElement>(null)
     const options = {
         componentRestrictions: { country: "us" },
         fields: ['formatted address', 'geometry', 'name']
@@ -47,10 +47,23 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
         toggleCalculating(false)
         toggleCalculated(Object.keys(result.data).length > 0)
     }
+
+    useEffect(() => {
+        if (autoCompleteRef.current && inputRef.current) {
+            const inputElement = inputRef.current
+            if (inputElement instanceof HTMLInputElement) {
+                autoCompleteRef.current = new google.maps.places.Autocomplete(inputRef.current, options) 
+            }
+        }
+    })
     
     return (
         <div className="calculator-form">
         <h2>Enter your school&apos;s information</h2>
+        <form>
+            <label>Address: </label>
+            <input ref={inputRef} />
+        </form>
         {/* <form onSubmit={handleSubmit}>
             <label htmlFor="streetAddress">Street Address</label>
             <input onChange={handleChange} name="streetAddress" placeholder="633 Clark St" required/>
