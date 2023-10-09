@@ -68,8 +68,9 @@ form label, form input {
 }
 
 .search-button {
+  background-color: #21C34F;
+  color: white;
   padding: .25rem;
-  background-color: orange;
   border-radius: .25rem;
   margin: .25rem 45% .25rem 45%;
 }
