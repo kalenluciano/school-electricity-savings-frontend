@@ -4,20 +4,7 @@ import React, { useState, useEffect } from "react"
 import axios from 'axios'
 import {BASE_URL} from '../src/globals'
 
-type CalculatorFormProps = {
-    setCalculatedSavings: React.Dispatch<React.SetStateAction<any>>,
-    toggleCalculated: React.Dispatch<React.SetStateAction<any>>,
-    toggleCalculating: React.Dispatch<React.SetStateAction<any>>
-}
-
-interface FormValues {
-    streetAddress: string,
-    city: string,
-    state: string,
-    zipCode: string
-}
-
-const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculating } : CalculatorFormProps) => {
+const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculating }) => {
     const initialFormValues = {
         streetAddress: "",
         city: "",
@@ -25,13 +12,13 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
         zipCode: ""
     }
 
-    const [formValues, setFormValues] = useState<FormValues>(initialFormValues)
+    const [formValues, setFormValues] = useState(initialFormValues)
 
-    const handleChange = (e: any) => {
+    const handleChange = (e) => {
         setFormValues({...formValues, [e.target.name]: e.target.value.replaceAll(" ", "+")})
     }
 
-    const handleSubmit = async (e: any) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         toggleCalculating(true)
         const result = await axios.get(`${BASE_URL}/address/${formValues.streetAddress}/${formValues.city}/${formValues.state}/${formValues.zipCode}`)

@@ -5,7 +5,7 @@ import { useState } from "react"
 const FAQ = () => {
     const [clicked, setClicked] = useState(false)
 
-    const handleChange = (e: any) => {
+    const handleChange = (e) => {
         setClicked(!clicked)
     }
 

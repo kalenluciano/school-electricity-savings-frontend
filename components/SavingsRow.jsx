@@ -2,24 +2,9 @@
 
 import { useState } from "react"
 
-type SavingsRow = {
-    savings: {id: number,
-        item: string, 
-        description: string,
-        amount?: number, 
-        createdAt: string,
-        updatedAt: string,
-        main_savings?: {
-            id: number,
-            item: string,
-            description: string,
-            amount?: number,
-            createdAt: string,
-            updatedAt: string,
-        }[]}
-}
 
-const SavingsRow = ({savings}: SavingsRow) => {
+
+const SavingsRow = ({savings}) => {
     const [clicked, toggleClicked] = useState(false)
 
     const handleChange = () => {
