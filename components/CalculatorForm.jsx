@@ -35,11 +35,12 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
         <div className="calculator-form">
         <h2>Enter your school&apos;s information</h2>
         <form onSubmit={handleSubmit}>
+            <label htmlFor="address">Street address</label>
             <Autocomplete
                 apiKey={process.env.NEXT_PUBLIC_API_KEY_GOOGLE}
                 onPlaceSelected={handlePlaceSelected}
                 onChange={handleInputChange}
-                placeholder="Enter your school's address"
+                placeholder="Start typing your school&apos;s address..."
                 options={{
                     types: ['address'],
                     fields: ['formatted_address', 'geometry']
