@@ -1,0 +1,14 @@
+{
+	"minimum_savings_info": [
+		{ "id": 1, "item": "Solar Panel Installation", "amount": "30%" },
+		{ "id": 2, "item": "Battery Storage Installation", "amount": "30%" },
+		{ "id": 3, "item": "Electric Vehicles", "amount": "30%" },
+		{
+			"id": 4,
+			"item": "Electric Vehicle Charger Installation",
+			"amount": "30%"
+		},
+		{ "id": 5, "item": "Building Energy Efficiency", "amount": "Varies" },
+		{ "id": 6, "item": "Geothermal Heating Installation", "amount": "30%" }
+	]
+}

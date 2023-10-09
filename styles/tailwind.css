@@ -155,3 +155,8 @@ form label, form input {
 .savings-more-info-section p {
   padding: .5rem 0;
 }
+
+.savings-row-more-info-button {
+  background-color: #E2E8F0;
+  color: #494949;
+}
