@@ -2,8 +2,6 @@
 
 import { useState } from "react"
 
-
-
 const SavingsRow = ({savings}) => {
     const [clicked, toggleClicked] = useState(false)
 

@@ -1,8 +1,8 @@
 'use client';
 
-import CalculatorForm from '../../components/CalculatorForm';
-import FAQ from '../../components/FAQ';
-import SavingsTable from '../../components/SavingsTable';
+import CalculatorForm from '../components/CalculatorForm';
+import FAQ from '../components/FAQ';
+import SavingsTable from '../components/SavingsTable';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BASE_URL } from '../globals';
