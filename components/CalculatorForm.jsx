@@ -4,7 +4,7 @@ import React, { useState } from "react"
 import axios from 'axios'
 import {BASE_URL} from '../globals'
 import Autocomplete from "react-google-autocomplete";
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 import BsLightningFill from 'public/assets/BsLightningFill.jsx'
 
 const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculating }) => {
