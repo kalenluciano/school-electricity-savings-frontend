@@ -1,4 +1,4 @@
-import SavingsRow from './SavingsRow'
+// import SavingsRow from './SavingsRow'
 
 const SavingsTable = ({savingsInfo, calculatedSavings, calculated, calculating}) => {
     
@@ -16,7 +16,7 @@ const SavingsTable = ({savingsInfo, calculatedSavings, calculated, calculating})
                     <div className='more-info'></div>
                 </div>
                 
-                { calculated ? <div>{calculatedSavings.savings.map((savings) => <div key={savings.id}><SavingsRow savings={savings}/></div>)}</div> : <div>{savingsInfo.map((savings) => <div key={savings.id}><SavingsRow savings={savings}/></div>)}</div>}
+                {/* { calculated ? <div>{calculatedSavings.savings.map((savings) => <div key={savings.id}><SavingsRow savings={savings}/></div>)}</div> : <div>{savingsInfo.map((savings) => <div key={savings.id}><SavingsRow savings={savings}/></div>)}</div>} */}
             </div>}
             
         </div>

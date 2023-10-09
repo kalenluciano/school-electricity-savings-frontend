@@ -8,19 +8,9 @@ import axios from 'axios';
 import { BASE_URL } from '../globals';
 
 export default function Home() {
-	const [savingsInfo, setSavingsInfo] = useState([]);
 	const [calculatedSavings, setCalculatedSavings] = useState({});
 	const [calculated, toggleCalculated] = useState(false);
 	const [calculating, toggleCalculating] = useState(false);
-
-	const getInitialSavings = async () => {
-		const result = await axios.get(`${BASE_URL}/savings`);
-		setSavingsInfo(result.data);
-	};
-
-	useEffect(() => {
-		getInitialSavings();
-	}, []);
 
 	return (
 		<main>
@@ -38,7 +28,6 @@ export default function Home() {
 				/>
 				<FAQ />
 				<SavingsTable
-					savingsInfo={savingsInfo}
 					calculatedSavings={calculatedSavings}
 					calculated={calculated}
 					calculating={calculating}
