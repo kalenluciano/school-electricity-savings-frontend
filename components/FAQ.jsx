@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from "react"
+import Image from "next/image"
 
 const FAQ = () => {
     const [clicked, setClicked] = useState(false)
@@ -13,7 +14,7 @@ const FAQ = () => {
         <div className="faq">
             <div className="faq-header">
             <h2>Frequently Asked Questions</h2>
-            <button className="more-info-button" onClick={handleChange}>More Info</button>
+            <button className="more-info-button" onClick={handleChange}><Image src="/assets/AccordionIcon.svg" alt="Down arrow icon" width={24} height={24}/></button>
             </div>
             {clicked && <div className="faq-info">
                 <h3>What is the Inflation Reduction Act and how does it help decarbonize schools?</h3> 
