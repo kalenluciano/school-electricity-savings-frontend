@@ -22,11 +22,11 @@ const SavingsRow = ({savings, calculatedSavings}) => {
             <p className="amount">{savings.amount}</p>
             <Button className="more-info more-info-button savings-row-more-info-button" onClick={handleChange} size={"sm"} variant={"outline"} colorScheme="gray" rightIcon={<BsChevronDown/>}>More info</Button>
             {clicked && <div className="savings-more-info-section">
-                <OverviewTab savings={savings} calculatedSavings={calculatedSavings} />
-                <IncentivesTab savings={savings} calculatedSavings={calculatedSavings} />
-                <CostsTab savings={savings} calculatedSavings={calculatedSavings} />
-                <BenefitsTab savings={savings} calculatedSavings={calculatedSavings}/>
-                <DataSourcesTab savings={savings} calculatedSavings={calculatedSavings} />
+                <OverviewTab overview={savings.overview} calculatedSavings={calculatedSavings} />
+                <IncentivesTab taxIncentives={savings} additionalGrants={savings} calculatedSavings={calculatedSavings} />
+                <CostsTab costs={savings.costs} calculatedSavings={calculatedSavings} />
+                <BenefitsTab benefits={savings.benefits} calculatedSavings={calculatedSavings}/>
+                <DataSourcesTab dataSources={savings.data_sources} calculatedSavings={calculatedSavings} />
             </div>}
         </div>
     )
