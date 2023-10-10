@@ -9,8 +9,8 @@ import BsLightningFill from 'public/assets/BsLightningFill.jsx'
 
 const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculating }) => {
     const [address, setAddress] = useState("");
-    const [coordinatesLat, setCoordinatesLat] = useState("")
-    const [coordinatesLng, setCoordinatesLng] = useState("")
+    const [coordinatesLat, setCoordinatesLat] = useState("%20")
+    const [coordinatesLng, setCoordinatesLng] = useState("%20")
 
     const handlePlaceSelected = async (place) => {
         setAddress(place.formatted_address.replaceAll(' ', '%20').replaceAll(',', '%2C'));
