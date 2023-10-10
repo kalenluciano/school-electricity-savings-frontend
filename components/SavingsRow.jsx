@@ -3,6 +3,11 @@
 import { useState } from "react"
 import { Button } from '@chakra-ui/react'
 import {BsChevronDown} from 'react-icons/bs'
+import OverviewTab from "./OverviewTab"
+import IncentivesTab from "./IncentivesTab"
+import CostsTab from "./CostsTab"
+import BenefitsTab from "./BenefitsTab"
+import DataSourcesTab from "./DataSourcesTab"
 
 const SavingsRow = ({savings, calculatedSavings}) => {
     const [clicked, toggleClicked] = useState(false)
@@ -16,17 +21,13 @@ const SavingsRow = ({savings, calculatedSavings}) => {
             <p className="savings-item">{savings.item}</p>
             <p className="amount">{savings.amount}</p>
             <Button className="more-info more-info-button savings-row-more-info-button" onClick={handleChange} size={"sm"} variant={"outline"} colorScheme="gray" rightIcon={<BsChevronDown/>}>More info</Button>
-            {/* {clicked && <div className="savings-more-info-section">
-                <p className="savings-description">{savings.description}</p>
-                {savings.main_savings?.map((bonus) => (
-                    <div key={bonus.id} className="savings-row">
-                        <p className="savings-item">{bonus.item}</p>
-                        <p className="amount">{bonus.amount + '%'}</p>
-                        <p className="more-info"></p>
-                        <p className="savings-description">{bonus.description}</p>
-                    </div>
-                ))}
-            </div>} */}
+            {clicked && <div className="savings-more-info-section">
+                <OverviewTab savings={savings} calculatedSavings={calculatedSavings} />
+                <IncentivesTab savings={savings} calculatedSavings={calculatedSavings} />
+                <CostsTab savings={savings} calculatedSavings={calculatedSavings} />
+                <BenefitsTab savings={savings} calculatedSavings={calculatedSavings}/>
+                <DataSourcesTab savings={savings} calculatedSavings={calculatedSavings} />
+            </div>}
         </div>
     )
 }
