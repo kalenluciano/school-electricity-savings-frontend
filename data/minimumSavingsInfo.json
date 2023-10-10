@@ -12,6 +12,40 @@
 				"explanation": "Solar panels use solar photovoltaic (PV) panels to turn sunlight into electricity. PV panels can be installed on school rooftops, parking lot canopies, or on fields. Solar provides clean, renewable energy even on a cloudy day. Once installed and paid for, PV panels provide zero-carbon, no-cost electricity that can provide huge savings for schools in the long-term.",
 				"image": ""
 			},
+			"tax_incentives": {
+				"heading": "Total Tax Incentives",
+				"sub_heading": "Base + Additional Credits = Total Tax Incentives",
+				"total_value": "30%",
+				"reference_point": "of equipment and installation costs",
+				"base_credit": {
+					"sub_heading": "All schools are eligible for the 30% base tax credit for installing solar panels.",
+					"value": "30%",
+					"reference_point": "of equipment and installation costs"
+				},
+				"additional_credits": {
+					"sub_heading": "Based on your location and census data, we think your school qualifies for the below additional incentives.",
+					"value": "0%",
+					"reference_point": "of equipment and installation costs",
+					"bonuses": [
+						{
+							"bonus": "low_income_indian_land",
+							"value": "10%",
+							"requirements": ["low_income", "indian_land"]
+						},
+						{
+							"bonus": "energy_community",
+							"value": "10%",
+							"requirements": [
+								"coal_mine",
+								"fossil_fuel_employment",
+								"brownfield_site"
+							]
+						},
+						{ "bonus": "us_material", "value": "10%", "requirements": [] }
+					]
+				}
+			},
+			"additional_grants": null,
 			"costs": {
 				"value": ["~$1,000-$1.500 per kWh¹"],
 				"reference_point": "before tax incentives",
@@ -64,6 +98,40 @@
 				"explanation": "A battery storage system lets you store energy from the power grid or from rooftop solar. Battery storage systems are most effective when paired with rooftop solar, because the pairing enables schools to store no-cost solar electricity generated during the day for use around the clock.",
 				"image": ""
 			},
+			"tax_incentives": {
+				"heading": "Total Tax Incentives",
+				"sub_heading": "Base + Additional Credits = Total Tax Incentives",
+				"total_value": "30%",
+				"reference_point": "of equipment and installation costs",
+				"base_credit": {
+					"sub_heading": "All schools are eligible for the 30% base tax credit for installing solar panels.",
+					"value": "30%",
+					"reference_point": "of equipment and installation costs"
+				},
+				"additional_credits": {
+					"sub_heading": "Based on your location and census data, we think your school qualifies for the below additional incentives.",
+					"value": "0%",
+					"reference_point": "of equipment and installation costs",
+					"bonuses": [
+						{
+							"bonus": "low_income_indian_land",
+							"value": "10%",
+							"requirements": ["low_income", "indian_land"]
+						},
+						{
+							"bonus": "energy_community",
+							"value": "10%",
+							"requirements": [
+								"coal_mine",
+								"fossil_fuel_employment",
+								"brownfield_site"
+							]
+						},
+						{ "bonus": "us_material", "value": "10%", "requirements": [] }
+					]
+				}
+			},
+			"additional_grants": null,
 			"costs": {
 				"value": ["~$600-1,000+ per kWh¹"],
 				"reference_point": "before tax incentives",
@@ -116,6 +184,35 @@
 				"explanation": "Electric vehicles can either be partially or fully powered by electricity. Full electric vehicles (EVs) have a battery instead of a gasolina tank and use an electric motor instead of an internal combustion engine. Plug-in hybrid electric vehicles (PHEVs) can use both gasoline and electricity, so they have a battery, an electric motor, a gasoline tank, and an internal combustion engine. Most on-market electric school buses have a usable range up to about 210 miles, enough to cover most bus routes and then charge them overnight. Schools can also use tax incentives to install dedicated EV charging stations for buses.",
 				"image": ""
 			},
+			"tax_incentives": {
+				"heading": "Tax Incentives",
+				"sub_heading": "Estimated based on your school’s location",
+				"total_value": "30%",
+				"reference_point": "of equipment and installation costs*",
+				"content": "*All schools are eligible for the 30% base tax credit for purchasing electric vehicles. The credit caps at $40,000 per vehicle for those that weigh more than 14,000 lbs (like a school bus). For vehicles less than 14,000 lbs, the credit will be up to $7,500 per vehicle."
+			},
+			"additional_grants": [
+				{
+					"grant": "clean_heavy_duty_vehicles",
+					"value": "$1 billion",
+					"requirements": ["poor_air_quality"]
+				},
+				{
+					"grant": "clean_school_bus",
+					"value": "$3000",
+					"requirements": [
+						"high_need_schools",
+						"rural_schools",
+						"bureau_funded_schools",
+						"schools_with_children_on_indian_land"
+					]
+				},
+				{
+					"grant": "support_for_state_energy_programs",
+					"value": "$500 million",
+					"requirements": []
+				}
+			],
 			"costs": {
 				"value": [
 					"Car: ~$40,000-80,000¹",
@@ -161,6 +258,25 @@
 				"explanation": "An EV charger pulls electricity from the grid and delivers it to an electric vehicle. Level 2 chargers pull electricity from a 240V outlet and can fully charge most electric vehicles overnight, making it a good match for the service schedule of school buses. Level 3 DC fast chargers are available at much higher charging power and are better suited to fleet vehicles with higher duty cycles that cannot sit overnight.",
 				"image": ""
 			},
+			"tax_incentives": {
+				"heading": "Tax Incentives",
+				"sub_heading": "Estimated based on your school’s location",
+				"total_value": "30%",
+				"reference_point": "of equipment and installation costs*",
+				"content": "*All schools are eligible for the 30% base tax credit for the cost of each electric vehicle charger installed. The credit maxes out at $100,000. Permitting and inspection fees are, however, not included in the covered expenses."
+			},
+			"additional_grants": [
+				{
+					"grant": "clean_heavy_duty_vehicles",
+					"value": "$1 billion",
+					"requirements": ["poor_air_quality"]
+				},
+				{
+					"grant": "national_electric_vehicle_formula",
+					"value": "$500 million",
+					"requirements": ["disadvantaged_communities"]
+				}
+			],
 			"costs": {
 				"value": ["~$600-140,000 per vehicle¹"],
 				"reference_point": "before tax incentives",
@@ -201,6 +317,14 @@
 				"explanation": "Building energy efficiency improvements including interior lighting design, heating and cooling systems, ventilation systems, and hot water systems qualify for this deduction. Schools can work with contractors to take advantage of the deduction and reduce the overall project cost.",
 				"image": ""
 			},
+			"tax_incentives": {
+				"heading": "Tax Incentives",
+				"sub_heading": "Estimated based on your school’s location",
+				"total_value": "Varies*",
+				"reference_point": "",
+				"content": "*Projects must increase building energy efficiency by 25%. The base deduction will be $0.50 per square foot, and the deduction can be increased $0.02 for each percentage point increase in energy efficiency, up to $1 per square foot. Bonus deductions can be applied if prevailing wage and apprenticeship requirements are met, increasing the deduction to $2.50 per square foot and increasing by $0.10 for each percentage point increase in energy efficiency, up to $5 per square foot."
+			},
+			"additional_grants": null,
 			"costs": {
 				"value": ["Varies*"],
 				"reference_point": "",
@@ -233,6 +357,40 @@
 				"explanation": "Geothermal, or “ground-source” heat pumps function similar to other types of heat pumps, capturing and moving heat between indoors and out. The primary difference is that geothermal systems transfer heat with the Earth through long loops of liquid-filled pipes buried in the ground, while other heat pumps use the air to transfer heat. A few feet underneath the Earth, temperatures remain stable year-round, so geothermal heating doesn't have to do much work to extract and disperse heat.",
 				"image": ""
 			},
+			"tax_incentives": {
+				"heading": "Total Tax Incentives",
+				"sub_heading": "Base + Additional Credits = Total Tax Incentives",
+				"total_value": "30%",
+				"reference_point": "of equipment and installation costs",
+				"base_credit": {
+					"sub_heading": "All schools are eligible for the 30% base tax credit for installing solar panels.",
+					"value": "30%",
+					"reference_point": "of equipment and installation costs"
+				},
+				"additional_credits": {
+					"sub_heading": "Based on your location and census data, we think your school qualifies for the below additional incentives.",
+					"value": "0%",
+					"reference_point": "of equipment and installation costs",
+					"bonuses": [
+						{
+							"bonus": "low_income_indian_land",
+							"value": "10%",
+							"requirements": ["low_income", "indian_land"]
+						},
+						{
+							"bonus": "energy_community",
+							"value": "10%",
+							"requirements": [
+								"coal_mine",
+								"fossil_fuel_employment",
+								"brownfield_site"
+							]
+						},
+						{ "bonus": "us_material", "value": "10%", "requirements": [] }
+					]
+				}
+			},
+			"additional_grants": null,
 			"costs": {
 				"value": ["~$4,000 per kWh¹"],
 				"reference_point": "before tax incentives",
