@@ -1,14 +1,277 @@
 {
 	"minimum_savings_info": [
-		{ "id": 1, "item": "Solar Panel Installation", "amount": "30%" },
-		{ "id": 2, "item": "Battery Storage Installation", "amount": "30%" },
-		{ "id": 3, "item": "Electric Vehicles", "amount": "30%" },
+		{
+			"id": 1,
+			"item": "Solar Panel Installation",
+			"amount": "30%",
+			"overview": {
+				"intro": "Solar panels convert sunlight into electricity. They can be installed on school rooftops, parking lot canopies, or on fields. They produce no carbon emissions and can provide huge energy savings for schools depending on energy usage.",
+				"life_span": "20-30 years",
+				"tax_credits": "30%",
+				"grants": "N/A",
+				"explanation": "Solar panels use solar photovoltaic (PV) panels to turn sunlight into electricity. PV panels can be installed on school rooftops, parking lot canopies, or on fields. Solar provides clean, renewable energy even on a cloudy day. Once installed and paid for, PV panels provide zero-carbon, no-cost electricity that can provide huge savings for schools in the long-term.",
+				"image": ""
+			},
+			"costs": {
+				"value": ["~$1,000-$1.500 per kWh&#x00B9;"],
+				"reference_point": "before tax incentives",
+				"explanation": "Costs depend on capacity, type, and brand. The values listed are for 2023 and before any tax credits or additional funding sources like grants are applied. Please reach out to your local energy companies for more accurate estimates.",
+				"footers": [
+					"[1] https://www.forbes.com/home-improvement/solar/cost-of-solar-panels/"
+				]
+			},
+			"benefits": {
+				"financial": "Once the installation is paid for, schools can earn huge amounts of savings converting to solar energy. Electricity production from solar panels is completely free, and as your school&apos;s electricity needs grow, solar will deliver even bigger savings.",
+				"environmental": "Solar energy produces no carbon emissions. In many cases, this carbon-free electricity will flow back into the utility grid, decreasing the amount of fossil fuels burned by your utility company to power the rest of your community.",
+				"health_other": "When paired with battery storage, solar energy can make your school resilient to outages when the rest of the grid goes out."
+			},
+			"data_sources": [
+				{
+					"title": "Finding the School&apos;s Geographies",
+					"content": "<p>Most of the requirements depend on the school&apos;s census tract, metropolitan statistical area, and state. The calculator uses Google Maps&apos; API to convert the school&apos;s address to its coordinates. It then uses the 2020 Census to identify the school&apos;s census tract, county, metropolitan statistical area, and state as of 2020. It will also determine whether the school is in any of the following geographies tracked by the 2020 Census: tribal block groups, tribal census tracts, off-reservation trust lands, Alaska Native Village statistical areas, Federal American Indian Reservations. You can find more information on each of these geographies<a href='https://www.census.gov/programs-surveys/geography/about/glossary.html' target='_blank' rel='noopener noreferrer'>here</a>.</p>"
+				},
+				{
+					"title": "Low-Income Requirement",
+					"content": "<p>The low-income requirement can be met in one of two ways.</p><ol><li>The calculator first uses the Census&apos; 2021 American Community Survey: 5-Year Estimates to get the poverty rate of the school&apos;s census tract. If the poverty rate is greater than or equal to 20%, the school is considered eligible for the low-income bonus.</li><li>If the poverty rate is less than 20%, the calculator checks to see if the school might meet the other option, which is based on median family income. A school qualifies for the bonus if its census tract has a family median income less than or equal to 80% of the metropolitan area or state&apos;s family median income. The calculator again uses the 2021 Census American Community Survey: 5-Year Estimates to find the median family of the census tract, metropolitan area (if applicable), and state.</li></ol>"
+				},
+				{
+					"title": "Indian Land Requirement",
+					"content": "<p>First, the calculator checks to see if the school&apos;s address was in any of the relevant 2020 Census geographies, including tribal block groups, tribal census tracts, off-reservation trust lands, Alaska Native Village statistical areas, Federal American Indian Reservations. If the school is in any of these geographies, the calculator determines that the school met the eligibility requirements for the Indian Land bonus. Otherwise, the calculator uses the 2010 Census Summary File to get the total population of the census tract as well as the total number of people who are “American Indian and Alaska Native Alone, or in combination with one or more other races, and with one or more tribes reported for selected tribes” in that census tract.Then the calculator determines if the majority (> 50%) of residents in the census tract are enrolled members of a federally recognized Tribe, qualifying the school for this bonus.</p>"
+				},
+				{
+					"title": "Coal Mine Requirement",
+					"content": "<p>The IRS released an official <a href='https://www.irs.gov/pub/irs-drop/n-23-29-appendix-c.pdf' target='_blank' rel='noopener noreferrer'>spreadsheet</a> on April 4, 2023, listing all census tracts that met the coal mine requirement. This was defined as, “census tracts that have ever had, since December 31, 1999, a closed coal mine or [that] have ever had, since December 31, 2009, a retired coal-fired electric generating unit, and [includes] directly adjoining tracts.” The calculator uses this spreadsheet to see if a given school&apos;s census tract is in the spreadsheet and therefore qualifies.</p>"
+				},
+				{
+					"title": "Fossil Fuel Employment Requirement",
+					"content": "<p>The fossil fuel employment requirement has <u>two</u> sub-requirements:</p><ol><li>A school must be in a metropolitan statistical area (MSA) or non-MSA with a 0.17% or greater direct fossil fuel employment and</li><li>The school&apos;s MSA or non-MSA had a 2022 unemployment rate lower than the national average unemployment rate for 2021.</li></ol><p>The IRS released an official <a href='https://www.irs.gov/pub/irs-drop/n-23-29-appendix-b.pdf' target='_blank' rel='noopener noreferrer'>spreadsheet</a> on April 4, 2023, listing all MSAs and non-MSAs that meet the first sub-requirement of having a 0.17% or greater direct fossil fuel employment. The calculator uses this spreadsheet to see if a given school&apos;s county is in a MSA or non-MSA on the IRA&apos;s spreadsheet and therefore qualifies for the first requirement.</p><p>If the school meets this first requirement, the calculator then gets the unemployment rate for the MSA/non-MSA in 2022 and compares that to the national average unemployment in 2021.</p><ul><li>The calculator uses the national average unemployment rate in May 2021 <a href='https://www.bls.gov/opub/ted/2021/unemployment-rates-lower-than-national-rate-in-27-states-higher-in-12-states-and-d-c-in-may-2021.htm' target='_blank' rel='noopener noreferrer'>reported by the U.S. Bureau of Labor Statistics</a> for this comparison.</li><li>The calculator also uses the U.S. Bureau of Labor Statistics to get the number of people in the labor force and those who are unemployed for each county in 2022.</li><li>The number of people in the labor force and those who are unemployed are added up for each county in a given MSA/non-MSA.</li><li>Then, the MSA/non-MSA&apos;s total unemployed is divided by its total labor force to determine the unemployment rate for a MSA/non-MSA in 2022. </li><li>The 2022 unemployment rate for the MSA/non-MSA is then compared to the national average unemployment rate in 2021 to determine if the school&apos;s MSA/non-MSA meets the second part of the fossil fuel employment requirement and therefore qualifies for the bonus.</li></ul>"
+				},
+				{
+					"title": "Brownfield Site Requirement",
+					"content": "<p>The calculator uses the EPA&apos;s <a href='https://cimc.epa.gov/ords/cimc/f?p=CIMC:LIST' target='_blank' rel='noopener noreferrer'>Cleanups in My Community</a> database to collect all possible brownfield sites that may meet this requirement. It filters for all brownfield properties in the database and then imports the data into its database.</p><Image src='/assets/brownfield_sites_data_source.png' alt='A table of fields to select for types of brownfield sites' fill={true}/><p>Currently, the data isn&apos;t regularly updated in the calculator. The last update to the calculator&apos;s database was August 3, 2023. The calculator uses a school&apos;s coordinates to see if any brownfield sites are within a hundredth of a degree both by longitude and latitude to determine if a school is on or near a brownfield site.</p>"
+				}
+			]
+		},
+		{
+			"id": 2,
+			"item": "Battery Storage Installation",
+			"amount": "30%",
+			"overview": {
+				"intro": "A battery storage system lets you store energy from the power grid or from rooftop solar for you to use later.",
+				"life_span": "5-15 years",
+				"tax_credits": "30%",
+				"grants": "N/A",
+				"explanation": "A battery storage system lets you store energy from the power grid or from rooftop solar. Battery storage systems are most effective when paired with rooftop solar, because the pairing enables schools to store no-cost solar electricity generated during the day for use around the clock.",
+				"image": ""
+			},
+			"costs": {
+				"value": ["~$600-1,000+ per kWh&#x00B9;"],
+				"reference_point": "before tax incentives",
+				"explanation": "Costs depend on capacity, type, and brand. The values listed are for 2023 and before any tax credits or additional funding sources like grants are applied. Please reach out to your local energy companies for more accurate estimates.",
+				"footers": [
+					"[1] https://homeguide.com/costs/solar-battery-storage-system-cost"
+				]
+			},
+			"benefits": {
+				"financial": "A battery storage system stores excess solar energy generated during the day. Schools can use this low-cost excess energy during peak hours, when grid electricity is most expensive, which reduces their electricity bill. As more utilities roll out “time-of-use” rates and demand-response programs, batteries will enable customers to take full advantage of available incentives.",
+				"environmental": "Battery storage systems reduce carbon emissions by enabling buildings to use zero-emission solar energy all day long.",
+				"health_other": "Battery storage systems provide resiliency against short-term grid outages, and battery storage paired with rooftop solar can provide resiliency against long-term grid outages."
+			},
+			"data_sources": [
+				{
+					"title": "Finding the School&apos;s Geographies",
+					"content": "<p>Most of the requirements depend on the school&apos;s census tract, metropolitan statistical area, and state. The calculator uses Google Maps&apos; API to convert the school&apos;s address to its coordinates. It then uses the 2020 Census to identify the school&apos;s census tract, county, metropolitan statistical area, and state as of 2020. It will also determine whether the school is in any of the following geographies tracked by the 2020 Census: tribal block groups, tribal census tracts, off-reservation trust lands, Alaska Native Village statistical areas, Federal American Indian Reservations. You can find more information on each of these geographies<a href='https://www.census.gov/programs-surveys/geography/about/glossary.html' target='_blank' rel='noopener noreferrer'>here</a>.</p>"
+				},
+				{
+					"title": "Low-Income Requirement",
+					"content": "<p>The low-income requirement can be met in one of two ways.</p><ol><li>The calculator first uses the Census&apos; 2021 American Community Survey: 5-Year Estimates to get the poverty rate of the school&apos;s census tract. If the poverty rate is greater than or equal to 20%, the school is considered eligible for the low-income bonus.</li><li>If the poverty rate is less than 20%, the calculator checks to see if the school might meet the other option, which is based on median family income. A school qualifies for the bonus if its census tract has a family median income less than or equal to 80% of the metropolitan area or state&apos;s family median income. The calculator again uses the 2021 Census American Community Survey: 5-Year Estimates to find the median family of the census tract, metropolitan area (if applicable), and state.</li></ol>"
+				},
+				{
+					"title": "Indian Land Requirement",
+					"content": "<p>First, the calculator checks to see if the school&apos;s address was in any of the relevant 2020 Census geographies, including tribal block groups, tribal census tracts, off-reservation trust lands, Alaska Native Village statistical areas, Federal American Indian Reservations. If the school is in any of these geographies, the calculator determines that the school met the eligibility requirements for the Indian Land bonus. Otherwise, the calculator uses the 2010 Census Summary File to get the total population of the census tract as well as the total number of people who are “American Indian and Alaska Native Alone, or in combination with one or more other races, and with one or more tribes reported for selected tribes” in that census tract.Then the calculator determines if the majority (> 50%) of residents in the census tract are enrolled members of a federally recognized Tribe, qualifying the school for this bonus.</p>"
+				},
+				{
+					"title": "Coal Mine Requirement",
+					"content": "<p>The IRS released an official <a href='https://www.irs.gov/pub/irs-drop/n-23-29-appendix-c.pdf' target='_blank' rel='noopener noreferrer'>spreadsheet</a> on April 4, 2023, listing all census tracts that met the coal mine requirement. This was defined as, “census tracts that have ever had, since December 31, 1999, a closed coal mine or [that] have ever had, since December 31, 2009, a retired coal-fired electric generating unit, and [includes] directly adjoining tracts.” The calculator uses this spreadsheet to see if a given school&apos;s census tract is in the spreadsheet and therefore qualifies.</p>"
+				},
+				{
+					"title": "Fossil Fuel Employment Requirement",
+					"content": "<p>The fossil fuel employment requirement has <u>two</u> sub-requirements:</p><ol><li>A school must be in a metropolitan statistical area (MSA) or non-MSA with a 0.17% or greater direct fossil fuel employment and</li><li>The school&apos;s MSA or non-MSA had a 2022 unemployment rate lower than the national average unemployment rate for 2021.</li></ol><p>The IRS released an official <a href='https://www.irs.gov/pub/irs-drop/n-23-29-appendix-b.pdf' target='_blank' rel='noopener noreferrer'>spreadsheet</a> on April 4, 2023, listing all MSAs and non-MSAs that meet the first sub-requirement of having a 0.17% or greater direct fossil fuel employment. The calculator uses this spreadsheet to see if a given school&apos;s county is in a MSA or non-MSA on the IRA&apos;s spreadsheet and therefore qualifies for the first requirement.</p><p>If the school meets this first requirement, the calculator then gets the unemployment rate for the MSA/non-MSA in 2022 and compares that to the national average unemployment in 2021.</p><ul><li>The calculator uses the national average unemployment rate in May 2021 <a href='https://www.bls.gov/opub/ted/2021/unemployment-rates-lower-than-national-rate-in-27-states-higher-in-12-states-and-d-c-in-may-2021.htm' target='_blank' rel='noopener noreferrer'>reported by the U.S. Bureau of Labor Statistics</a> for this comparison.</li><li>The calculator also uses the U.S. Bureau of Labor Statistics to get the number of people in the labor force and those who are unemployed for each county in 2022.</li><li>The number of people in the labor force and those who are unemployed are added up for each county in a given MSA/non-MSA.</li><li>Then, the MSA/non-MSA&apos;s total unemployed is divided by its total labor force to determine the unemployment rate for a MSA/non-MSA in 2022. </li><li>The 2022 unemployment rate for the MSA/non-MSA is then compared to the national average unemployment rate in 2021 to determine if the school&apos;s MSA/non-MSA meets the second part of the fossil fuel employment requirement and therefore qualifies for the bonus.</li></ul>"
+				},
+				{
+					"title": "Brownfield Site Requirement",
+					"content": "<p>The calculator uses the EPA&apos;s <a href='https://cimc.epa.gov/ords/cimc/f?p=CIMC:LIST' target='_blank' rel='noopener noreferrer'>Cleanups in My Community</a> database to collect all possible brownfield sites that may meet this requirement. It filters for all brownfield properties in the database and then imports the data into its database.</p><Image src='/assets/brownfield_sites_data_source.png' alt='A table of fields to select for types of brownfield sites' fill={true}/><p>Currently, the data isn&apos;t regularly updated in the calculator. The last update to the calculator&apos;s database was August 3, 2023. The calculator uses a school&apos;s coordinates to see if any brownfield sites are within a hundredth of a degree both by longitude and latitude to determine if a school is on or near a brownfield site.</p>"
+				}
+			]
+		},
+		{
+			"id": 3,
+			"item": "Electric Vehicles",
+			"amount": "30%",
+			"overview": {
+				"intro": "Electric vehicles can either be partially or fully powered by electricity. Full electric vehicles (EVs) are powered only by electricity, while plug-in hybrid electric vehicles (PHEVs) can use both gasoline and electricity.",
+				"life_span": "20-25 years",
+				"tax_credits": "30%",
+				"grants": "2",
+				"explanation": "Electric vehicles can either be partially or fully powered by electricity. Full electric vehicles (EVs) have a battery instead of a gasolina tank and use an electric motor instead of an internal combustion engine. Plug-in hybrid electric vehicles (PHEVs) can use both gasoline and electricity, so they have a battery, an electric motor, a gasoline tank, and an internal combustion engine. Most on-market electric school buses have a usable range up to about 210 miles, enough to cover most bus routes and then charge them overnight. Schools can also use tax incentives to install dedicated EV charging stations for buses.",
+				"image": ""
+			},
+			"costs": {
+				"value": [
+					"Car: ~$40,000-80,000&#x00B9;",
+					"Minibus (Type A): ~$200,000-350,000&#x00B2;",
+					"School Bus (Types C & D): ~$350,000-450,000&#x00B2;"
+				],
+				"reference_point": "before tax incentives",
+				"explanation": "Costs depend on capacity, type, and brand. The values listed are for new 2023 vehicles and before any tax credits or additional funding sources like grants are applied. Please reach out to your local vehicle dealer for more accurate estimates.",
+				"footers": [
+					"[1] https://electrek.co/2023/08/08/which-electric-vehicles-still-qualify-for-us-federal-tax-credit/",
+					"[2] https://afdc.energy.gov/files/u/publication/electric-school-bus-us-market-study-buyers-guide.pdf?da24b3ed9c"
+				]
+			},
+			"benefits": {
+				"financial": "Electric vehicles are cheaper to operate than gas-powered vehicles. With volatile and high gas prices, electric vehicles provide an alternative that can reduce annual operations and maintenance costs for transportation.",
+				"environmental": "Transitioning to electric school buses can help school districts mitigate their impact on the climate and reduce air pollution. When paired with clean electricity sources like rooftop solar, electric vehicles don&apos;t produce any emissions while charging.",
+				"health_other": "Electric vehicles don&apos;t pollute school communities with air pollution, improving health and learning for students."
+			},
+			"data_sources": [
+				{
+					"title": "Finding the School&apos;s Geographies",
+					"content": "<p>Most of the requirements depend on the school&apos;s census tract, metropolitan statistical area, and state. The calculator uses Google Maps&apos; API to convert the school&apos;s address to its coordinates. It then uses the 2020 Census to identify the school&apos;s census tract, county, metropolitan statistical area, and state as of 2020. It will also determine whether the school is in any of the following geographies tracked by the 2020 Census: tribal block groups, tribal census tracts, off-reservation trust lands, Alaska Native Village statistical areas, Federal American Indian Reservations. You can find more information on each of these geographies<a href='https://www.census.gov/programs-surveys/geography/about/glossary.html' target='_blank' rel='noopener noreferrer'>here</a>.</p>"
+				},
+				{
+					"title": "Poor Air-Quality (Nonattainment Area) Prioritization",
+					"content": "<p>The data was obtained from the <a href='https://www3.epa.gov/airquality/greenbook/ancl.html#AK' target='_blank' rel='noopener noreferrer'>EPA&apos;s Green Book</a> and used the spreadsheet detailing current nonattainment counties for all criteria pollutants. The data is current as of September 30, 2023. The exported data was filtered to remove NAAQS standards that were revoked and areas that have been redesignated to maintenance status (no longer nonattainment). The calculator uses the spreadsheet to determine if the school's county matches any of the nonattainment areas listed in the database.</p>"
+				},
+				{
+					"title": "EPA Clean School Bus Program Prioritization",
+					"content": "<p>The calculator uses the school&apos;s census tract to identify its local education agency ID (most commonly a school district) based on the National Center for Education Statistics&apos; <a href='https://nces.ed.gov/programs/edge/Geographic/RelationshipFiles' target='_blank' rel='noopener noreferrer'>Geographic Relationship Files for 2022</a>, representing the 2021-2022 school year. The EPA published the <a href='https://www.epa.gov/system/files/documents/2023-04/fy23-csb-prioritized-detailed-list-2023-04.xlsx' target='_blank' rel='noopener noreferrer'>2023 Clean School Bus Grants prioritized school district list</a>, which also provides a spreadsheet of school districts that might be eligible for self-certification. Using these spreadsheets, the calculator checks to determine if the school&apos;s local education agency ID has a match in either of these datasets, which would make the school qualify for priority or self-certification status.</p>"
+				}
+			]
+		},
 		{
 			"id": 4,
 			"item": "Electric Vehicle Charger Installation",
-			"amount": "30%"
+			"amount": "30%",
+			"overview": {
+				"intro": "An EV charger pulls electricity from the grid and delivers it to an electric vehicle, just like any other appliance or device that needs to charge.",
+				"life_span": "10-15 years",
+				"tax_credits": "30%",
+				"grants": "2",
+				"explanation": "An EV charger pulls electricity from the grid and delivers it to an electric vehicle. Level 2 chargers pull electricity from a 240V outlet and can fully charge most electric vehicles overnight, making it a good match for the service schedule of school buses. Level 3 DC fast chargers are available at much higher charging power and are better suited to fleet vehicles with higher duty cycles that cannot sit overnight.",
+				"image": ""
+			},
+			"costs": {
+				"value": ["~$600-140,000 per vehicle&#x00B9;"],
+				"reference_point": "before tax incentives",
+				"explanation": "The infrastructure needed to charge vehicles, like electrical updates to the school and installing charging stations can range between roughly $600-140,000 per vehicle depending on a variety of factors like vehicle size, charging speed, existing electrical capacity, and overall project size.",
+				"footers": [
+					"[1] https://afdc.energy.gov/vehicles/electric_school_buses_p8_m1.html"
+				]
+			},
+			"benefits": {
+				"financial": "EV chargers themselves won&apos;t necessarily save schools money, but they will enable them to use electric vehicles, which is much cheaper to operate than gas-powered vehicles.",
+				"environmental": "EV chargers enable electric vehicle use, which is better for the environment. When paired with clean electricity sources like rooftop solar, chargers provide emission-free fuel.",
+				"health_other": "EV chargers work well for school buses that tend to be stored and charged in depots overnight."
+			},
+			"data_sources": [
+				{
+					"title": "Finding the School&apos;s Geographies",
+					"content": "<p>Most of the requirements depend on the school&apos;s census tract, metropolitan statistical area, and state. The calculator uses Google Maps&apos; API to convert the school&apos;s address to its coordinates. It then uses the 2020 Census to identify the school&apos;s census tract, county, metropolitan statistical area, and state as of 2020. It will also determine whether the school is in any of the following geographies tracked by the 2020 Census: tribal block groups, tribal census tracts, off-reservation trust lands, Alaska Native Village statistical areas, Federal American Indian Reservations. You can find more information on each of these geographies<a href='https://www.census.gov/programs-surveys/geography/about/glossary.html' target='_blank' rel='noopener noreferrer'>here</a>.</p>"
+				},
+				{
+					"title": "Poor Air-Quality (Nonattainment Area) Prioritization",
+					"content": "<p>The data was obtained from the <a href='https://www3.epa.gov/airquality/greenbook/ancl.html#AK' target='_blank' rel='noopener noreferrer'>EPA&apos;s Green Book</a> and used the spreadsheet detailing current nonattainment counties for all criteria pollutants. The data is current as of September 30, 2023. The exported data was filtered to remove NAAQS standards that were revoked and areas that have been redesignated to maintenance status (no longer nonattainment). The calculator uses the spreadsheet to determine if the school's county matches any of the nonattainment areas listed in the database.</p>"
+				},
+				{
+					"title": "Disadvantaged Communities Prioritization",
+					"content": "<p>The calculator utilized the <a href='https://screeningtool.geoplatform.gov/en/downloads#3/33.47/-97.5' target='_blank' rel='noopener noreferrer'>Climate and Economic Justice Screening Tool</a> that identifies disadvantaged communities by their 2010 census tract. If the school was in a census tract identified as a disadvantaged community, the calculator determined that it qualified for the disadvantaged communities prioritization.</p>"
+				}
+			]
 		},
-		{ "id": 5, "item": "Building Energy Efficiency", "amount": "Varies" },
-		{ "id": 6, "item": "Geothermal Heating Installation", "amount": "30%" }
+		{
+			"id": 5,
+			"item": "Building Energy Efficiency",
+			"amount": "Varies",
+			"overview": {
+				"intro": "Schools can&apos;t directly benefit from the Energy Efficient Commercial Buildings Deduction provided by the Inflation Reduction Act, but third-party contractors responsible for the design or retrofit can claim the deduction, reducing the overall energy efficiency project cost for schools.",
+				"life_span": "Varies",
+				"tax_credits": "Varies",
+				"grants": "N/A",
+				"explanation": "Building energy efficiency improvements including interior lighting design, heating and cooling systems, ventilation systems, and hot water systems qualify for this deduction. Schools can work with contractors to take advantage of the deduction and reduce the overall project cost.",
+				"image": ""
+			},
+			"costs": {
+				"value": ["Varies*"],
+				"reference_point": "",
+				"explanation": "",
+				"footers": [
+					"* Costs vary based on the improvement project, brand, and materials used. Please reach out to your local building energy efficiency companies for more accurate estimates."
+				]
+			},
+			"benefits": {
+				"financial": "Projects that make schools more energy efficient reduce energy use and provide savings for schools.",
+				"environmental": "Energy efficient buildings can help reduce energy use and emissions.",
+				"health_other": "Energy efficiency measures contribute to overall physical and mental well-being by fostering healthful indoor living conditions. These conditions encompass healthy air temperatures, humidity levels, noise levels, and improved air quality."
+			},
+			"data_sources": [
+				{
+					"title": "Finding the School&apos;s Geographies",
+					"content": "<p>Most of the requirements depend on the school&apos;s census tract, metropolitan statistical area, and state. The calculator uses Google Maps&apos; API to convert the school&apos;s address to its coordinates. It then uses the 2020 Census to identify the school&apos;s census tract, county, metropolitan statistical area, and state as of 2020. It will also determine whether the school is in any of the following geographies tracked by the 2020 Census: tribal block groups, tribal census tracts, off-reservation trust lands, Alaska Native Village statistical areas, Federal American Indian Reservations. You can find more information on each of these geographies<a href='https://www.census.gov/programs-surveys/geography/about/glossary.html' target='_blank' rel='noopener noreferrer'>here</a>.</p>"
+				}
+			]
+		},
+		{
+			"id": 6,
+			"item": "Geothermal Heating Installation",
+			"amount": "30%",
+			"overview": {
+				"intro": "Geothermal heat pumps use stable underground temperatures to heat and cool a building.",
+				"life_span": "20-50 years",
+				"tax_credits": "30%",
+				"grants": "N/A",
+				"explanation": "Geothermal, or “ground-source” heat pumps function similar to other types of heat pumps, capturing and moving heat between indoors and out. The primary difference is that geothermal systems transfer heat with the Earth through long loops of liquid-filled pipes buried in the ground, while other heat pumps use the air to transfer heat. A few feet underneath the Earth, temperatures remain stable year-round, so geothermal heating doesn&apos;t have to do much work to extract and disperse heat.",
+				"image": ""
+			},
+			"costs": {
+				"value": ["~$4,000 per kWh&#x00B9;"],
+				"reference_point": "before tax incentives",
+				"explanation": "While the upfront cost for geothermal is more expensive, long-term maintenance costs tend to be lower compared to solar systems. Geothermal systems typically last longer, too. Costs depend on capacity, type, and brand. The values listed are for 2023 and before any tax credits or additional funding sources like grants are applied. Please reach out to your local energy companies for more accurate estimates.",
+				"footers": [
+					"[1] https://www.statista.com/statistics/1027751/global-geothermal-power-installation-cost-per-kilowatt/"
+				]
+			},
+			"benefits": {
+				"financial": "Geothermal heating transfers heat instead of creating, and it doesn&apos;t burn fossil fuels in the process. As a result, it&apos;s 3-5 times more efficient than most current heating systems. These efficiency gains can provide a lot of energy savings for schools.",
+				"environmental": "Geothermal heating doesn&apos;t burn fossil fuels to create heat. It&apos;s a carbon-free energy source for heating.",
+				"health_other": "Geothermal heat pumps have a long lifespan of 20-50 years and require less maintenance than other heating and cooling systems."
+			},
+			"data_sources": [
+				{
+					"title": "Finding the School&apos;s Geographies",
+					"content": "<p>Most of the requirements depend on the school&apos;s census tract, metropolitan statistical area, and state. The calculator uses Google Maps&apos; API to convert the school&apos;s address to its coordinates. It then uses the 2020 Census to identify the school&apos;s census tract, county, metropolitan statistical area, and state as of 2020. It will also determine whether the school is in any of the following geographies tracked by the 2020 Census: tribal block groups, tribal census tracts, off-reservation trust lands, Alaska Native Village statistical areas, Federal American Indian Reservations. You can find more information on each of these geographies<a href='https://www.census.gov/programs-surveys/geography/about/glossary.html' target='_blank' rel='noopener noreferrer'>here</a>.</p>"
+				},
+				{
+					"title": "Low-Income Requirement",
+					"content": "<p>The low-income requirement can be met in one of two ways.</p><ol><li>The calculator first uses the Census&apos; 2021 American Community Survey: 5-Year Estimates to get the poverty rate of the school&apos;s census tract. If the poverty rate is greater than or equal to 20%, the school is considered eligible for the low-income bonus.</li><li>If the poverty rate is less than 20%, the calculator checks to see if the school might meet the other option, which is based on median family income. A school qualifies for the bonus if its census tract has a family median income less than or equal to 80% of the metropolitan area or state&apos;s family median income. The calculator again uses the 2021 Census American Community Survey: 5-Year Estimates to find the median family of the census tract, metropolitan area (if applicable), and state.</li></ol>"
+				},
+				{
+					"title": "Indian Land Requirement",
+					"content": "<p>First, the calculator checks to see if the school&apos;s address was in any of the relevant 2020 Census geographies, including tribal block groups, tribal census tracts, off-reservation trust lands, Alaska Native Village statistical areas, Federal American Indian Reservations. If the school is in any of these geographies, the calculator determines that the school met the eligibility requirements for the Indian Land bonus. Otherwise, the calculator uses the 2010 Census Summary File to get the total population of the census tract as well as the total number of people who are “American Indian and Alaska Native Alone, or in combination with one or more other races, and with one or more tribes reported for selected tribes” in that census tract.Then the calculator determines if the majority (> 50%) of residents in the census tract are enrolled members of a federally recognized Tribe, qualifying the school for this bonus.</p>"
+				},
+				{
+					"title": "Coal Mine Requirement",
+					"content": "<p>The IRS released an official <a href='https://www.irs.gov/pub/irs-drop/n-23-29-appendix-c.pdf' target='_blank' rel='noopener noreferrer'>spreadsheet</a> on April 4, 2023, listing all census tracts that met the coal mine requirement. This was defined as, “census tracts that have ever had, since December 31, 1999, a closed coal mine or [that] have ever had, since December 31, 2009, a retired coal-fired electric generating unit, and [includes] directly adjoining tracts.” The calculator uses this spreadsheet to see if a given school&apos;s census tract is in the spreadsheet and therefore qualifies.</p>"
+				},
+				{
+					"title": "Fossil Fuel Employment Requirement",
+					"content": "<p>The fossil fuel employment requirement has <u>two</u> sub-requirements:</p><ol><li>A school must be in a metropolitan statistical area (MSA) or non-MSA with a 0.17% or greater direct fossil fuel employment and</li><li>The school&apos;s MSA or non-MSA had a 2022 unemployment rate lower than the national average unemployment rate for 2021.</li></ol><p>The IRS released an official <a href='https://www.irs.gov/pub/irs-drop/n-23-29-appendix-b.pdf' target='_blank' rel='noopener noreferrer'>spreadsheet</a> on April 4, 2023, listing all MSAs and non-MSAs that meet the first sub-requirement of having a 0.17% or greater direct fossil fuel employment. The calculator uses this spreadsheet to see if a given school&apos;s county is in a MSA or non-MSA on the IRA&apos;s spreadsheet and therefore qualifies for the first requirement.</p><p>If the school meets this first requirement, the calculator then gets the unemployment rate for the MSA/non-MSA in 2022 and compares that to the national average unemployment in 2021.</p><ul><li>The calculator uses the national average unemployment rate in May 2021 <a href='https://www.bls.gov/opub/ted/2021/unemployment-rates-lower-than-national-rate-in-27-states-higher-in-12-states-and-d-c-in-may-2021.htm' target='_blank' rel='noopener noreferrer'>reported by the U.S. Bureau of Labor Statistics</a> for this comparison.</li><li>The calculator also uses the U.S. Bureau of Labor Statistics to get the number of people in the labor force and those who are unemployed for each county in 2022.</li><li>The number of people in the labor force and those who are unemployed are added up for each county in a given MSA/non-MSA.</li><li>Then, the MSA/non-MSA&apos;s total unemployed is divided by its total labor force to determine the unemployment rate for a MSA/non-MSA in 2022. </li><li>The 2022 unemployment rate for the MSA/non-MSA is then compared to the national average unemployment rate in 2021 to determine if the school&apos;s MSA/non-MSA meets the second part of the fossil fuel employment requirement and therefore qualifies for the bonus.</li></ul>"
+				},
+				{
+					"title": "Brownfield Site Requirement",
+					"content": "<p>The calculator uses the EPA&apos;s <a href='https://cimc.epa.gov/ords/cimc/f?p=CIMC:LIST' target='_blank' rel='noopener noreferrer'>Cleanups in My Community</a> database to collect all possible brownfield sites that may meet this requirement. It filters for all brownfield properties in the database and then imports the data into its database.</p><Image src='/assets/brownfield_sites_data_source.png' alt='A table of fields to select for types of brownfield sites' fill={true}/><p>Currently, the data isn&apos;t regularly updated in the calculator. The last update to the calculator&apos;s database was August 3, 2023. The calculator uses a school&apos;s coordinates to see if any brownfield sites are within a hundredth of a degree both by longitude and latitude to determine if a school is on or near a brownfield site.</p>"
+				}
+			]
+		}
 	]
 }
