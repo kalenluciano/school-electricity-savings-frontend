@@ -1,6 +1,12 @@
-const IncentivesTab = ({savings, calculatedSavings}) => {
+import TaxIncentivesSection from "./TaxIncentivesSection"
+import GrantsSection from "./GrantsSection"
+
+const IncentivesTab = ({taxIncentives, additionalGrants, calculatedSavings}) => {
   return (
-    <div>IncentivesTab</div>
+    <div>
+      <TaxIncentivesSection taxIncentives={taxIncentives} calculatedSavings={calculatedSavings} />
+      <GrantsSection additionalGrants={additionalGrants} calculatedSavings={calculatedSavings} />
+    </div>
   )
 }
 
