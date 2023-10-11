@@ -48,7 +48,7 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
                     fields: ['formatted_address', 'geometry']
                 }}
             />
-            <Button className="search-button" colorScheme="gray" size="lg" variant='solid' leftIcon={false} rightIcon={<BsLightningFill/>}>CALCULATE</Button>
+            <Button className="search-button" colorScheme="gray" size="lg" variant='solid' leftIcon={false} rightIcon={<BsLightningFill/>}  onClick={handleSubmit}>CALCULATE</Button>
         </form>
         </div>
     )
