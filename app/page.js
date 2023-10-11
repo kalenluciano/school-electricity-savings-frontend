@@ -9,7 +9,7 @@ import { BASE_URL } from '../globals';
 import Image from 'next/image';
 
 export default function Home() {
-	const [calculatedSavings, setCalculatedSavings] = useState({});
+	const [calculatedSavings, setCalculatedSavings] = useState(null);
 	const [calculated, toggleCalculated] = useState(false);
 	const [calculating, toggleCalculating] = useState(false);
 
