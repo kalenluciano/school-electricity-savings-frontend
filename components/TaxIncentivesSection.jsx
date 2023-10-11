@@ -16,18 +16,18 @@ const TaxIncentivesSection = ({taxIncentives, calculatedSavings, relevantStats})
           referencePoint={taxIncentives.base_credit.reference_point}/>
           <IncentivesSubHeader heading="Additional Credits"
             subHeading={taxIncentives.additional_credits.sub_heading}
-            value={taxIncentives.additional_credits.value}
+            value={relevantStats?.additional_credit !== undefined ? relevantStats.additional_credit + "%" : taxIncentives.additional_credits.value}
             referencePoint={taxIncentives.additional_credits.reference_point}
           />
           <div>
             {taxIncentives.additional_credits.bonuses.map((allowance, index) => (allowance.status ? <div key={index}>
-              <Allowance allowance={allowance} />
+              <Allowance allowance={allowance} calculatedSavings={calculatedSavings} relevantStats={relevantStats} />
             </div> : null))}
           </div>
           <div>
             <p>Your school likely doesn&apos;t qualify for:</p>
             {taxIncentives.additional_credits.bonuses.map((allowance, index) => (allowance.status ? null : <div key={index}>
-              <Allowance allowance={allowance} />
+              <Allowance allowance={allowance} calculatedSavings={calculatedSavings} relevantStats={relevantStats} />
             </div> ))}
           </div>
         </div>

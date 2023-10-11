@@ -1,7 +1,7 @@
 import Requirement from "./Requirement";
 import {FiCheckSquare, FiXSquare} from "react-icons/fi"
 
-const Allowance = ({ allowance }) => {
+const Allowance = ({ allowance, calculatedSavings, relevantStats }) => {
   let allowanceValue = allowance.status ? allowance.value : '0%';
 
   let allowanceContent;
@@ -11,11 +11,17 @@ const Allowance = ({ allowance }) => {
       allowanceContent = (
           <p><strong>Low-Income or Indian Land Bonus:</strong> Projects located in a low-income community or on Indian Land can earn an additional tax credit of 10% added to the base tax credit. A location qualifies for this additional credit if it meets <u>one</u> of the following requirements:</p>
       );
+      if (relevantStats?.low_income_status === true || relevantStats?.indian_land_status === true) {
+        allowanceValue = "10%"
+      }
       break;
     case 'energy_community':
       allowanceContent = (
           <p><strong>Energy Community Bonus:</strong> Projects located in an energy community can earn an additional tax credit of 10% added to the base tax credit. A location is considered an energy community if it meets <u>one</u> of the following requirements:</p>
       );
+      if (relevantStats?.coal_mine_status === true || relevantStats?.fossil_fuel_employment_status === true || relevantStats?.brownfield_site_status === true) {
+        allowanceValue = "10%"
+      }
       break;
     case 'us_material':
       allowanceContent = (
