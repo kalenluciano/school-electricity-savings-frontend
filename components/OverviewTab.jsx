@@ -11,7 +11,7 @@ const OverviewTab = ({overview, calculatedSavings, relevantStats}) => {
       
       <div>
         <h3>Estimated Tax Credits</h3>
-        <p>{relevantStats !== null ? parseInt(relevantStats.total_tax_credit) + "%" : overview.tax_credits  }</p>
+        <p>{relevantStats !== null ? relevantStats.total_tax_credit + "%" : overview.tax_credits  }</p>
       </div>
 
       <div>
