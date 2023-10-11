@@ -49,7 +49,7 @@
 						{
 							"allowance": "us_material",
 							"value": "10%",
-							"status": false,
+							"status": true,
 							"requirements": []
 						}
 					]
@@ -114,7 +114,7 @@
 				"total_value": "30%",
 				"reference_point": "of equipment and installation costs",
 				"base_credit": {
-					"sub_heading": "All schools are eligible for the 30% base tax credit for installing solar panels.",
+					"sub_heading": "All schools are eligible for the 30% base tax credit for installing battery storage.",
 					"value": "30%",
 					"reference_point": "of equipment and installation costs"
 				},
@@ -145,7 +145,7 @@
 						{
 							"allowance": "us_material",
 							"value": "10%",
-							"status": false,
+							"status": true,
 							"requirements": []
 						}
 					]
@@ -223,6 +223,7 @@
 				{
 					"allowance": "clean_school_bus",
 					"value": "$3000",
+					"status": true,
 					"requirements": [
 						{ "requirement": "high_need_schools", "status": false },
 						{ "requirement": "rural_schools", "status": false },
@@ -236,6 +237,7 @@
 				{
 					"allowance": "support_for_state_energy_programs",
 					"value": "$500 million",
+					"status": true,
 					"requirements": []
 				}
 			],
@@ -295,6 +297,7 @@
 				{
 					"allowance": "clean_heavy_duty_vehicles",
 					"value": "$1 billion",
+					"status": true,
 					"requirements": [
 						{ "requirement": "poor_air_quality", "status": false }
 					]
@@ -302,6 +305,7 @@
 				{
 					"allowance": "national_electric_vehicle_formula",
 					"value": "$500 million",
+					"status": true,
 					"requirements": [
 						{ "requirement": "disadvantaged_communities", "status": false }
 					]
@@ -393,7 +397,7 @@
 				"total_value": "30%",
 				"reference_point": "of equipment and installation costs",
 				"base_credit": {
-					"sub_heading": "All schools are eligible for the 30% base tax credit for installing solar panels.",
+					"sub_heading": "All schools are eligible for the 30% base tax credit for installing geothermal heating.",
 					"value": "30%",
 					"reference_point": "of equipment and installation costs"
 				},
@@ -424,7 +428,7 @@
 						{
 							"allowance": "us_material",
 							"value": "10%",
-							"status": false,
+							"status": true,
 							"requirements": []
 						}
 					]
