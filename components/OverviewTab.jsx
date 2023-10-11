@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-const OverviewTab = ({overview, calculatedSavings}) => {
+const OverviewTab = ({overview, calculatedSavings, relevantStats}) => {
   return (
     <div>
       <p>{overview.intro}</p>
@@ -11,12 +11,12 @@ const OverviewTab = ({overview, calculatedSavings}) => {
       
       <div>
         <h3>Estimated Tax Credits</h3>
-        <p>{overview.tax_credits}</p>
+        <p>{relevantStats !== null ? parseInt(relevantStats.total_tax_credit) + "%" : overview.tax_credits  }</p>
       </div>
 
       <div>
         <h3>Additional Grants</h3>
-        <p>{overview.grants}</p>
+        <p>{relevantStats !== null ? relevantStats?.available_grants ?? "N/A" : overview.grants}</p>
       </div>
 
       {/* <Image src={overview.image} alt="" width={100} height={100}/> */}
