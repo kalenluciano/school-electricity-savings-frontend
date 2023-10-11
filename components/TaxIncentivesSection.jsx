@@ -20,7 +20,7 @@ const TaxIncentivesSection = ({taxIncentives, calculatedSavings, relevantStats})
             referencePoint={taxIncentives.additional_credits.reference_point}
           />
           <div>
-            {taxIncentives.additional_credits.bonuses.map((allowance, index) => (allowance.status ? <div key={index}>
+            {taxIncentives.additional_credits.bonuses.map((allowance, index) => ((allowance.status || (allowance.allowance === "low_income_indian_land" && (relevantStats?.low_income_status || relevantStats?.indian_land_status)) || (allowance.allowance === "energy_community" && (relevantStats?.coal_mine_status || relevantStats?.fossil_fuel_employment_status || relevantStats?.brownfield_site_status ))) ? <div key={index}>
               <Allowance allowance={allowance} calculatedSavings={calculatedSavings} relevantStats={relevantStats} />
             </div> : null))}
           </div>

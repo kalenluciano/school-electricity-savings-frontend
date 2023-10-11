@@ -2,6 +2,7 @@ import Requirement from "./Requirement";
 import {FiCheckSquare, FiXSquare} from "react-icons/fi"
 
 const Allowance = ({ allowance, calculatedSavings, relevantStats }) => {
+  let allowanceStatus = allowance.status
   let allowanceValue = allowance.status ? allowance.value : '0%';
 
   let allowanceContent;
@@ -12,6 +13,7 @@ const Allowance = ({ allowance, calculatedSavings, relevantStats }) => {
           <p><strong>Low-Income or Indian Land Bonus:</strong> Projects located in a low-income community or on Indian Land can earn an additional tax credit of 10% added to the base tax credit. A location qualifies for this additional credit if it meets <u>one</u> of the following requirements:</p>
       );
       if (relevantStats?.low_income_status === true || relevantStats?.indian_land_status === true) {
+        allowanceStatus = true
         allowanceValue = "10%"
       }
       break;
@@ -20,6 +22,7 @@ const Allowance = ({ allowance, calculatedSavings, relevantStats }) => {
           <p><strong>Energy Community Bonus:</strong> Projects located in an energy community can earn an additional tax credit of 10% added to the base tax credit. A location is considered an energy community if it meets <u>one</u> of the following requirements:</p>
       );
       if (relevantStats?.coal_mine_status === true || relevantStats?.fossil_fuel_employment_status === true || relevantStats?.brownfield_site_status === true) {
+        allowanceStatus = true
         allowanceValue = "10%"
       }
       break;
@@ -55,11 +58,11 @@ const Allowance = ({ allowance, calculatedSavings, relevantStats }) => {
 
   return (
   <div>
-    {allowance.status ? <FiCheckSquare className="text-green-600"/> : <FiXSquare className="text-red-600" />}
+    {allowanceStatus ? <FiCheckSquare className="text-green-600"/> : <FiXSquare className="text-red-600" />}
     {allowanceContent}
     <p>{allowanceValue}</p>
     {allowance.requirements.map((requirement, index) => (
-      <Requirement key={index} requirement={requirement} />
+      <Requirement key={index} requirement={requirement} calculatedSavings={calculatedSavings} relevantStats={relevantStats}/>
     ))}
   </div>
   );
