@@ -11,12 +11,12 @@ const OverviewTab = ({overview, calculatedSavings, relevantStats}) => {
       
       <div>
         <h3>Estimated Tax Credits</h3>
-        <p>{relevantStats !== null ? relevantStats.total_tax_credit + "%" : overview.tax_credits  }</p>
+        <p>{relevantStats?.total_tax_credit !== undefined ? relevantStats.total_tax_credit + "%" : overview.tax_credits  }</p>
       </div>
 
       <div>
         <h3>Additional Grants</h3>
-        <p>{relevantStats !== null ? relevantStats?.available_grants ?? "N/A" : overview.grants}</p>
+        <p>{relevantStats?.available_grants !== undefined ? relevantStats?.available_grants : overview.grants}</p>
       </div>
 
       {/* <Image src={overview.image} alt="" width={100} height={100}/> */}

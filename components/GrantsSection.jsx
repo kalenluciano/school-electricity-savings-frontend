@@ -1,7 +1,7 @@
 import IncentivesHeader from "./IncentivesHeader"
 import Allowance from "./Allowance"
 
-const GrantsSection = ({additionalGrants, calculatedSavings}) => {
+const GrantsSection = ({additionalGrants, calculatedSavings, relevantStats}) => {
   return (
     <div>
       {additionalGrants === null ? 

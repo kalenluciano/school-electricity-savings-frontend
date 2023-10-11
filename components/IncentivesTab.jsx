@@ -1,11 +1,11 @@
 import TaxIncentivesSection from "./TaxIncentivesSection"
 import GrantsSection from "./GrantsSection"
 
-const IncentivesTab = ({taxIncentives, additionalGrants, calculatedSavings}) => {
+const IncentivesTab = ({taxIncentives, additionalGrants, calculatedSavings, relevantStats}) => {
   return (
     <div>
-      <TaxIncentivesSection taxIncentives={taxIncentives} calculatedSavings={calculatedSavings} />
-      <GrantsSection additionalGrants={additionalGrants} calculatedSavings={calculatedSavings} />
+      <TaxIncentivesSection taxIncentives={taxIncentives} calculatedSavings={calculatedSavings} relevantStats={relevantStats}/>
+      <GrantsSection additionalGrants={additionalGrants} calculatedSavings={calculatedSavings} relevantStats={relevantStats} />
     </div>
   )
 }

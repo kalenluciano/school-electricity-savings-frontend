@@ -2,10 +2,10 @@ import IncentivesHeader from "./IncentivesHeader"
 import IncentivesSubHeader from "./IncentivesSubHeader"
 import Allowance from "./Allowance"
 
-const TaxIncentivesSection = ({taxIncentives, calculatedSavings}) => {
+const TaxIncentivesSection = ({taxIncentives, calculatedSavings, relevantStats}) => {
   return (
     <div>
-      <IncentivesHeader heading={taxIncentives.heading}subHeading={taxIncentives.sub_heading} value={taxIncentives.total_value} referencePoint={taxIncentives.reference_point}/>
+      <IncentivesHeader heading={taxIncentives.heading}subHeading={taxIncentives.sub_heading} value={relevantStats?.total_tax_credit !== undefined ? relevantStats.total_tax_credit + "%" : taxIncentives.total_value} referencePoint={taxIncentives.reference_point}/>
       {
         taxIncentives.base_credit === undefined ? 
         <div>{taxIncentives.content}</div> : 
