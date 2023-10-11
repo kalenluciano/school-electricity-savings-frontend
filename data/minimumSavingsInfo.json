@@ -28,20 +28,30 @@
 					"reference_point": "of equipment and installation costs",
 					"bonuses": [
 						{
-							"bonus": "low_income_indian_land",
+							"allowance": "low_income_indian_land",
 							"value": "10%",
-							"requirements": ["low_income", "indian_land"]
-						},
-						{
-							"bonus": "energy_community",
-							"value": "10%",
+							"status": false,
 							"requirements": [
-								"coal_mine",
-								"fossil_fuel_employment",
-								"brownfield_site"
+								{ "requirement": "low_income", "status": false },
+								{ "requirement": "indian_land", "status": false }
 							]
 						},
-						{ "bonus": "us_material", "value": "10%", "requirements": [] }
+						{
+							"allowance": "energy_community",
+							"value": "10%",
+							"status": false,
+							"requirements": [
+								{ "requirement": "coal_mine", "status": false },
+								{ "requirement": "fossil_fuel_employment", "status": false },
+								{ "requirement": "brownfield_site", "status": false }
+							]
+						},
+						{
+							"allowance": "us_material",
+							"value": "10%",
+							"status": false,
+							"requirements": []
+						}
 					]
 				}
 			},
@@ -114,20 +124,30 @@
 					"reference_point": "of equipment and installation costs",
 					"bonuses": [
 						{
-							"bonus": "low_income_indian_land",
+							"allowance": "low_income_indian_land",
 							"value": "10%",
-							"requirements": ["low_income", "indian_land"]
-						},
-						{
-							"bonus": "energy_community",
-							"value": "10%",
+							"status": false,
 							"requirements": [
-								"coal_mine",
-								"fossil_fuel_employment",
-								"brownfield_site"
+								{ "requirement": "low_income", "status": false },
+								{ "requirement": "indian_land", "status": false }
 							]
 						},
-						{ "bonus": "us_material", "value": "10%", "requirements": [] }
+						{
+							"allowance": "energy_community",
+							"value": "10%",
+							"status": false,
+							"requirements": [
+								{ "requirement": "coal_mine", "status": false },
+								{ "requirement": "fossil_fuel_employment", "status": false },
+								{ "requirement": "brownfield_site", "status": false }
+							]
+						},
+						{
+							"allowance": "us_material",
+							"value": "10%",
+							"status": false,
+							"requirements": []
+						}
 					]
 				}
 			},
@@ -193,22 +213,28 @@
 			},
 			"additional_grants": [
 				{
-					"grant": "clean_heavy_duty_vehicles",
+					"allowance": "clean_heavy_duty_vehicles",
 					"value": "$1 billion",
-					"requirements": ["poor_air_quality"]
-				},
-				{
-					"grant": "clean_school_bus",
-					"value": "$3000",
+					"status": true,
 					"requirements": [
-						"high_need_schools",
-						"rural_schools",
-						"bureau_funded_schools",
-						"schools_with_children_on_indian_land"
+						{ "requirement": "poor_air_quality", "status": false }
 					]
 				},
 				{
-					"grant": "support_for_state_energy_programs",
+					"allowance": "clean_school_bus",
+					"value": "$3000",
+					"requirements": [
+						{ "requirement": "high_need_schools", "status": false },
+						{ "requirement": "rural_schools", "status": false },
+						{ "requirement": "bureau_funded_schools", "status": false },
+						{
+							"requirement": "schools_with_children_on_indian_land",
+							"status": false
+						}
+					]
+				},
+				{
+					"allowance": "support_for_state_energy_programs",
 					"value": "$500 million",
 					"requirements": []
 				}
@@ -267,14 +293,18 @@
 			},
 			"additional_grants": [
 				{
-					"grant": "clean_heavy_duty_vehicles",
+					"allowance": "clean_heavy_duty_vehicles",
 					"value": "$1 billion",
-					"requirements": ["poor_air_quality"]
+					"requirements": [
+						{ "requirement": "poor_air_quality", "status": false }
+					]
 				},
 				{
-					"grant": "national_electric_vehicle_formula",
+					"allowance": "national_electric_vehicle_formula",
 					"value": "$500 million",
-					"requirements": ["disadvantaged_communities"]
+					"requirements": [
+						{ "requirement": "disadvantaged_communities", "status": false }
+					]
 				}
 			],
 			"costs": {
@@ -373,20 +403,30 @@
 					"reference_point": "of equipment and installation costs",
 					"bonuses": [
 						{
-							"bonus": "low_income_indian_land",
+							"allowance": "low_income_indian_land",
 							"value": "10%",
-							"requirements": ["low_income", "indian_land"]
-						},
-						{
-							"bonus": "energy_community",
-							"value": "10%",
+							"status": false,
 							"requirements": [
-								"coal_mine",
-								"fossil_fuel_employment",
-								"brownfield_site"
+								{ "requirement": "low_income", "status": false },
+								{ "requirement": "indian_land", "status": false }
 							]
 						},
-						{ "bonus": "us_material", "value": "10%", "requirements": [] }
+						{
+							"allowance": "energy_community",
+							"value": "10%",
+							"status": false,
+							"requirements": [
+								{ "requirement": "coal_mine", "status": false },
+								{ "requirement": "fossil_fuel_employment", "status": false },
+								{ "requirement": "brownfield_site", "status": false }
+							]
+						},
+						{
+							"allowance": "us_material",
+							"value": "10%",
+							"status": false,
+							"requirements": []
+						}
 					]
 				}
 			},
