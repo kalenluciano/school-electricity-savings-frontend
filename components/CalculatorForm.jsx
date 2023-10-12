@@ -11,9 +11,11 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
     const [address, setAddress] = useState("");
     const [coordinatesLat, setCoordinatesLat] = useState("%20")
     const [coordinatesLng, setCoordinatesLng] = useState("%20")
+    const [placeSelected, togglePlaceSelected] = useState(false)
 
     const handlePlaceSelected = async (place) => {
         setAddress(place.formatted_address.replaceAll(' ', '%20').replaceAll(',', '%2C'));
+        togglePlaceSelected(true)
         if (place.geometry.location) {
             setCoordinatesLat(place.geometry.location.lat)
             setCoordinatesLng(place.geometry.location.lng)
@@ -26,7 +28,7 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        if (address !== "") {
+        if (address !== "" && placeSelected) {
             toggleCalculating(true)
             const result = await axios.get(`${BASE_URL}/address/${address}/${coordinatesLat}/${coordinatesLng}`)
             setCalculatedSavings(result.data)
