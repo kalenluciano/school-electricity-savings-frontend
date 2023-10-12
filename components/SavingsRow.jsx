@@ -48,7 +48,7 @@ const SavingsRow = ({savings, calculatedSavings}) => {
         <div className={`${clicked && "border-b border-gray-outline shadow-md"}`}>
             <div className={`flex items-center justify-space-between flex-wrap py-3 px-10 ${clicked && "bg-gray-outline"}`}>
                 <p className="w-3/5 font-normal text-base text-ink-black">{savings.item}</p>
-                <p className="w-1/4 font-semibold text-base text-ink-black">{savings.amount}</p>
+                <p className="w-1/4 font-semibold text-base text-ink-black">{relevantStats?.total_tax_credit !== undefined ? relevantStats?.total_tax_credit : savings.amount}</p>
                 <Button className="bg-gray-blue text-dark-gray" onClick={handleChange} size={"sm"} colorScheme='gray' variant={"outline"}  rightIcon={<BsChevronDown/>}>More info</Button>
             </div>
             
