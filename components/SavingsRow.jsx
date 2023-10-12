@@ -8,6 +8,7 @@ import IncentivesTab from "./IncentivesTab"
 import CostsTab from "./CostsTab"
 import BenefitsTab from "./BenefitsTab"
 import DataSourcesTab from "./DataSourcesTab"
+import MoreInfoTabBar from "./MoreInfoTabBar"
 
 const SavingsRow = ({savings, calculatedSavings}) => {
     let relevantStats = null
@@ -36,6 +37,7 @@ const SavingsRow = ({savings, calculatedSavings}) => {
             break;
     }
 
+    const [currentTab, setCurrentTab] = useState('overview')
     const [clicked, toggleClicked] = useState(false)
 
     const handleChange = () => {
@@ -43,16 +45,20 @@ const SavingsRow = ({savings, calculatedSavings}) => {
     }
 
     return (
-        <div className="flex items-center justify-space-between flex-wrap py-3 px-10">
-            <p className="w-3/5 font-normal text-base text-ink-black">{savings.item}</p>
-            <p className="w-1/4 font-semibold text-base text-ink-black">{savings.amount}</p>
-            <Button className="bg-gray-blue text-dark-gray" onClick={handleChange} size={"sm"} colorScheme='gray' variant={"outline"}  rightIcon={<BsChevronDown/>}>More info</Button>
-            {clicked && <div className="savings-more-info-section">
-                <OverviewTab overview={savings.overview} calculatedSavings={calculatedSavings} relevantStats={relevantStats} />
-                <IncentivesTab taxIncentives={savings.tax_incentives} additionalGrants={savings.additional_grants} calculatedSavings={calculatedSavings} relevantStats={relevantStats} />
-                <CostsTab costs={savings.costs} calculatedSavings={calculatedSavings} />
-                <BenefitsTab benefits={savings.benefits} calculatedSavings={calculatedSavings}/>
-                <DataSourcesTab dataSources={savings.data_sources} calculatedSavings={calculatedSavings} />
+        <div className={`${clicked && "border-b border-gray-outline shadow-md"}`}>
+            <div className={`flex items-center justify-space-between flex-wrap py-3 px-10 ${clicked && "bg-gray-outline"}`}>
+                <p className="w-3/5 font-normal text-base text-ink-black">{savings.item}</p>
+                <p className="w-1/4 font-semibold text-base text-ink-black">{savings.amount}</p>
+                <Button className="bg-gray-blue text-dark-gray" onClick={handleChange} size={"sm"} colorScheme='gray' variant={"outline"}  rightIcon={<BsChevronDown/>}>More info</Button>
+            </div>
+            
+            {clicked && <div className="w-full">
+                <MoreInfoTabBar setCurrentTab={setCurrentTab} />
+                {currentTab === "overview" && <OverviewTab overview={savings.overview} calculatedSavings={calculatedSavings} relevantStats={relevantStats} />}
+                {currentTab === "incentives" &&<IncentivesTab taxIncentives={savings.tax_incentives} additionalGrants={savings.additional_grants} calculatedSavings={calculatedSavings} relevantStats={relevantStats} />}
+                {currentTab === "costs" && <CostsTab costs={savings.costs} calculatedSavings={calculatedSavings} />}
+                {currentTab === "benefits" && <BenefitsTab benefits={savings.benefits} calculatedSavings={calculatedSavings}/>}
+                {currentTab === "dataSources" && <DataSourcesTab dataSources={savings.data_sources} calculatedSavings={calculatedSavings} />}
             </div>}
         </div>
     )
