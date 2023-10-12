@@ -15,57 +15,8 @@ body {
   align-items: center;
 }
 
-.more-info-button {
-  padding: 0 .5rem;
-  border-radius: .25rem;
-}
-
-.savings-table-section {
-  max-width: 750px;
-  width: 100%;
-  padding: 1rem 0;
-}
-
-.savings-table-section h1 {
-  text-align: center;
-}
-
-.savings-header {
-  padding-bottom: 1rem;
-}
-
-.savings-table {
-  display: flex;
-  flex-flow: column wrap;
-}
-
-.savings-table-headers {
-  font-weight: 500;
-  display: flex;
-  justify-content: space-between;
-}
-
-.savings-item {
-  width: 60%
-}
-
-.amount {
-  width: 25%;
-}
-
-.more-info {
-  width: 15%
-}
-
 .savings-description {
   width: 100%;
-}
-
-.savings-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: .5rem 0;
 }
 
 .savings-more-info-section {
@@ -74,9 +25,4 @@ body {
 
 .savings-more-info-section p {
   padding: .5rem 0;
-}
-
-.savings-row-more-info-button {
-  background-color: #E2E8F0;
-  color: #494949;
 }

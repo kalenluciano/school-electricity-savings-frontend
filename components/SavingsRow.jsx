@@ -43,10 +43,10 @@ const SavingsRow = ({savings, calculatedSavings}) => {
     }
 
     return (
-        <div className="savings-row">
-            <p className="savings-item">{savings.item}</p>
-            <p className="amount">{savings.amount}</p>
-            <Button className="more-info more-info-button savings-row-more-info-button" onClick={handleChange} size={"sm"} variant={"outline"} colorScheme="gray" rightIcon={<BsChevronDown/>}>More info</Button>
+        <div className="flex items-center justify-space-between flex-wrap py-3 px-10">
+            <p className="w-3/5 font-normal text-base text-ink-black">{savings.item}</p>
+            <p className="w-1/4 font-semibold text-base text-ink-black">{savings.amount}</p>
+            <Button className="bg-gray-blue text-dark-gray" onClick={handleChange} size={"sm"} colorScheme='gray' variant={"outline"}  rightIcon={<BsChevronDown/>}>More info</Button>
             {clicked && <div className="savings-more-info-section">
                 <OverviewTab overview={savings.overview} calculatedSavings={calculatedSavings} relevantStats={relevantStats} />
                 <IncentivesTab taxIncentives={savings.tax_incentives} additionalGrants={savings.additional_grants} calculatedSavings={calculatedSavings} relevantStats={relevantStats} />
