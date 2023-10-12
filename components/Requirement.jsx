@@ -155,7 +155,7 @@ const Requirement = ({requirement, calculatedSavings, relevantStats}) => {
 
   return (
     <div>
-      {requirementStatus ? <FiCheck className="text-green-600"/> : <FiX className="text-red-600" />}
+      {requirementStatus ? <FiCheck className="text-green"/> : <FiX className="text-red" />}
       {requirementContent}
     </div>
   )

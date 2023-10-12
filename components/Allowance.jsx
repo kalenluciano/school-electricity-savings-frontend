@@ -58,7 +58,7 @@ const Allowance = ({ allowance, calculatedSavings, relevantStats }) => {
 
   return (
   <div>
-    {allowanceStatus ? <FiCheckSquare className="text-green-600"/> : <FiXSquare className="text-red-600" />}
+    {allowanceStatus ? <FiCheckSquare className="text-green"/> : <FiXSquare className="text-red" />}
     {allowanceContent}
     <p>{allowanceValue}</p>
     {allowance.requirements.map((requirement, index) => (
