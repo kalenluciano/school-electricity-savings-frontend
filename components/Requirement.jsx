@@ -1,4 +1,4 @@
-import {FiCheck, FiX} from "react-icons/fi"
+import Image from "next/image"
 
 const Requirement = ({requirement, calculatedSavings, relevantStats}) => {
   let requirementStatus = requirement.status
@@ -154,9 +154,9 @@ const Requirement = ({requirement, calculatedSavings, relevantStats}) => {
   }
 
   return (
-    <div>
-      {requirementStatus ? <FiCheck className="text-green"/> : <FiX className="text-red" />}
-      {requirementContent}
+    <div className="flex items-start self-stretch flex-1 gap-x-4 my-3">
+      {requirementStatus ? <Image src="/assets/FiCheck.svg" alt="Green check mark" width={24} height={24} className="w-6 h-6"/> : <Image src="/assets/FiX.svg" alt="Red X mark" width={24} height={24} className="w-6 h-6"/>}
+      <div className="requirement-content">{requirementContent}</div>
     </div>
   )
 }

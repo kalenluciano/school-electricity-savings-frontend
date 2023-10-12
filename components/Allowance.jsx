@@ -1,5 +1,5 @@
 import Requirement from "./Requirement";
-import {FiCheckSquare, FiXSquare} from "react-icons/fi"
+import Image from "next/image";
 
 const Allowance = ({ allowance, calculatedSavings, relevantStats }) => {
   let allowanceStatus = allowance.status
@@ -33,22 +33,22 @@ const Allowance = ({ allowance, calculatedSavings, relevantStats }) => {
       break;
     case 'clean_heavy_duty_vehicles':
       allowanceContent = (
-          <p><a href='https://www.epa.gov/inflation-reduction-act/clean-heavy-duty-vehicle-program' target='_blank' rel='noopener noreferrer'><strong>Clean Heavy-Duty Vehicles Program:</strong></a> All schools can apply for this competitive grant funding to replace diesel school buses with electric school buses. Funding can be used for purchasing, installing, operating, and maintaining infrastructure needed to charge or maintain electric school buses. The funds can also be used for workforce development and training as well as planning technical assistance activities to support the adoption and deployment of electric school buses.</p>
+          <p><strong><a href='https://www.epa.gov/inflation-reduction-act/clean-heavy-duty-vehicle-program' target='_blank' rel='noopener noreferrer'>Clean Heavy-Duty Vehicles Program:</a></strong> All schools can apply for this competitive grant funding to replace diesel school buses with electric school buses. Funding can be used for purchasing, installing, operating, and maintaining infrastructure needed to charge or maintain electric school buses. The funds can also be used for workforce development and training as well as planning technical assistance activities to support the adoption and deployment of electric school buses.</p>
       );
       break;
     case 'clean_school_bus':
       allowanceContent = (
-        <p><a href='https://www.epa.gov/cleanschoolbus/clean-school-bus-program-grants' target='_blank' rel='noopener noreferrer'><strong>EPA Clean School Bus Program:</strong></a> All schools can apply for funding from this program to help transition to zero-emission school buses, with $500 million available per fiscal year for the next 5 years. Priority will be given to schools leveraging additional funding opportunities as well as:</p>
+        <p><strong><a href='https://www.epa.gov/cleanschoolbus/clean-school-bus-program-grants' target='_blank' rel='noopener noreferrer'>EPA Clean School Bus Program:</a></strong> All schools can apply for funding from this program to help transition to zero-emission school buses, with $500 million available per fiscal year for the next 5 years. Priority will be given to schools leveraging additional funding opportunities as well as:</p>
       );
       break;
     case 'support_for_state_energy_programs':
       allowanceContent = (
-        <p><a href='https://www.energy.gov/scep/state-energy-program-0' target='_blank' rel='noopener noreferrer'><strong>Support for State Energy Programs and Reducing Transportation Emissions Program:</strong></a> Under this program, the federal government will distribute $500 million to all 50 states (and D.C.) based on a distribution formula. The funds can be used by State Energy Offices to develop and implement clean energy programs and projects. State energy plans include programs to reduce carbon emissions in the transportation sector and accelerate the use of alternative transportation fuels, including the electrification of school buses.</p>
+        <p><strong><a href='https://www.energy.gov/scep/state-energy-program-0' target='_blank' rel='noopener noreferrer'>Support for State Energy Programs and Reducing Transportation Emissions Program:</a></strong> Under this program, the federal government will distribute $500 million to all 50 states (and D.C.) based on a distribution formula. The funds can be used by State Energy Offices to develop and implement clean energy programs and projects. State energy plans include programs to reduce carbon emissions in the transportation sector and accelerate the use of alternative transportation fuels, including the electrification of school buses.</p>
       );
       break;
     case 'national_electric_vehicle_formula':
       allowanceContent = (
-        <p><a href='https://afdc.energy.gov/laws/12744' target='_blank' rel='noopener noreferrer'><strong>National Electric Vehicle Formula Program:</strong></a> Under this program, the federal government will distribute $5 billion to all 50 states (and D.C.) based on a distribution formula. The funds can be used by State Departments of Transportation to deploy electric vehicle charging infrastructure, including at or near schools, which can support the use of electric school buses and electric passenger vehicles. Priority will be given to projects in rural, underserved, and disadvantaged communities, but each state must develop its own plan to identify and support these communities.</p>
+        <p><strong><a href='https://afdc.energy.gov/laws/12744' target='_blank' rel='noopener noreferrer'>National Electric Vehicle Formula Program:</a></strong>Under this program, the federal government will distribute $5 billion to all 50 states (and D.C.) based on a distribution formula. The funds can be used by State Departments of Transportation to deploy electric vehicle charging infrastructure, including at or near schools, which can support the use of electric school buses and electric passenger vehicles. Priority will be given to projects in rural, underserved, and disadvantaged communities, but each state must develop its own plan to identify and support these communities.</p>
       );
       break;
     default:
@@ -58,13 +58,18 @@ const Allowance = ({ allowance, calculatedSavings, relevantStats }) => {
 
   return (
   <div>
-    {allowanceStatus ? <FiCheckSquare className="text-green"/> : <FiXSquare className="text-red" />}
-    {allowanceContent}
-    <p>{allowanceValue}</p>
-    {allowance.requirements.map((requirement, index) => (
-      <Requirement key={index} requirement={requirement} calculatedSavings={calculatedSavings} relevantStats={relevantStats}/>
-    ))}
+    <div className="flex justify-between self-stretch gap-x-6 my-3">
+      {allowanceStatus ? <Image src="/assets/FiCheckSquare.svg" alt="Green square with a check mark" width={24} height={24} className="w-6 h-6"/> : <Image src="/assets/FiXSquare.svg" alt="Red square with an X mark" width={24} height={24} className="w-6 h-6"/>}
+      <div className="allowance-content">{allowanceContent}</div>
+      <p className="text-ink-black font-medium">{allowanceValue}</p>
+    </div>
+    <div className="flex flex-col items-start self-stretch px-10">
+      {allowance.requirements.map((requirement, index) => (
+        <Requirement key={index} requirement={requirement} calculatedSavings={calculatedSavings} relevantStats={relevantStats}/>
+      ))}
+    </div>
   </div>
+  
   );
 };
 

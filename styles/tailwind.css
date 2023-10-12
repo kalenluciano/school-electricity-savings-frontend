@@ -40,3 +40,18 @@ body {
 .data-source-info img {
   margin-bottom: 1em;
 }
+
+.allowance-content strong, .requirement-content strong {
+  font-weight: 600;
+  color: #00171F;
+}
+
+.allowance-content a {
+  color: #2364AA;
+  text-decoration: underline
+}
+
+.allowance-content p, .requirement-content p {
+  color: #494949;
+  font-size: 1rem;
+}
