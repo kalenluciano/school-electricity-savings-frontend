@@ -15,17 +15,13 @@ body {
   align-items: center;
 }
 
-main {
-  width: 100%;
+h1 {
+  font-size: x-large;
+  font-weight: 700;
 }
 
 h2 {
   font-weight: 600;
-}
-
-h1 {
-  font-size: x-large;
-  font-weight: 700;
 }
 
 .content {
@@ -33,36 +29,6 @@ h1 {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-}
-
-.calculator-form {
-  padding: 1rem 0;
-  max-width: 750px;
-  width: 100%;
-}
-
-form {
-  display: flex;
-  flex-flow: column wrap;
-  width: 100%;
-}
-
-input {
-  border: 1px gray solid;
-  padding: .25rem;
-  border-radius: .25rem;
-}
-
-form label, form input {
-  margin: .25rem;
-}
-
-.search-button {
-  background-color: #21C34F;
-  color: white;
-  padding: .25rem;
-  border-radius: .25rem;
-  margin: .25rem 45% .25rem 45%;
 }
 
 .faq {

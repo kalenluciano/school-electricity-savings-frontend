@@ -12,7 +12,7 @@ export default function Home() {
 	const [calculating, toggleCalculating] = useState(false);
 
 	return (
-		<main>
+		<main className="bg-light-gray">
 			<div className="w-screen h-5 bg-vibrant-green"></div>
 			<Header />
 			<div className="content">

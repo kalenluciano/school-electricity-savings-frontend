@@ -10,9 +10,9 @@ const Header = () => {
 					height={500}
 					className='w-1/3 h-fit'
 				/>
-				<h2 className='text-dark-gray text-lg mt-2'>
+				<h3 className='text-dark-gray text-lg mt-2 font-semibold'>
 					How much money can your school save with the Inflation Reduction Act?
-				</h2>
+				</h3>
     </header>
   )
 }

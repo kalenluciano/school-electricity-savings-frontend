@@ -34,22 +34,24 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
     }
     
     return (
-        <div className="calculator-form">
-        <h2>Enter your school&apos;s information</h2>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="address">Street address</label>
-            <Autocomplete
-                apiKey={process.env.NEXT_PUBLIC_API_KEY_GOOGLE}
-                onPlaceSelected={handlePlaceSelected}
-                onChange={handleInputChange}
-                placeholder="Start typing your school&apos;s address..."
-                options={{
-                    types: ['address'],
-                    fields: ['formatted_address', 'geometry']
-                }}
-            />
-            <Button className="search-button" colorScheme="gray" size="lg" variant='solid' leftIcon={false} rightIcon={<BsLightningFill/>}  onClick={handleSubmit}>CALCULATE</Button>
-        </form>
+        <div className="w-2/4 h-64 py-8 px-10 flex flex-col justify-center items-center rounded-lg border border-white bg-white shadow-md p-4">
+        <div className="mb-4 flex flex-col items-start w-full">
+            <h3 className="mb-4 text-lg text-ink-black font-semibold">Enter your school&apos;s information</h3>
+            <form className="mt-4 flex flex-col items-start w-full" onSubmit={handleSubmit} >
+                <label htmlFor="address" className="text-dark-gray font-normal text-base">Street address</label>
+                <Autocomplete className="px-3 rounded border border-gray-400 bg-white mt-2 w-full h-10 flex flex-col items-center justify-center text-gray-500"
+                    apiKey={process.env.NEXT_PUBLIC_API_KEY_GOOGLE}
+                    onPlaceSelected={handlePlaceSelected}
+                    onChange={handleInputChange}
+                    placeholder="Start typing your school&apos;s address..."
+                    options={{
+                        types: ['address'],
+                        fields: ['formatted_address', 'geometry']
+                    }}
+                />
+            </form>
+        </div>
+        <Button className="search-button mt-5 rounded-lg bg-vibrant-green shadow-md p-4 px-6 text-white hover:bg-dark-green" colorScheme="gray" size="lg" variant='solid' leftIcon={false} rightIcon={<BsLightningFill/>}  onClick={handleSubmit}>CALCULATE</Button>
         </div>
     )
 }
