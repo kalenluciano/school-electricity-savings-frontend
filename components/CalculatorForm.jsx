@@ -14,12 +14,15 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
     const [placeSelected, togglePlaceSelected] = useState(false)
 
     const handlePlaceSelected = async (place) => {
-        setAddress(place.formatted_address.replaceAll(' ', '%20').replaceAll(',', '%2C'));
-        togglePlaceSelected(true)
-        if (place.geometry.location) {
-            setCoordinatesLat(place.geometry.location.lat)
-            setCoordinatesLng(place.geometry.location.lng)
+        if (place && place.formatted_address) {
+            setAddress(place.formatted_address.replaceAll(' ', '%20').replaceAll(',', '%2C'));
+            togglePlaceSelected(true)
+            if (place.geometry.location) {
+                setCoordinatesLat(place.geometry.location.lat)
+                setCoordinatesLng(place.geometry.location.lng)
+            }
         }
+        
     }
 
     const handleInputChange = (e) => {
