@@ -9,6 +9,7 @@ const Header = () => {
 					width={1000}
 					height={500}
 					className='w-1/3 h-fit'
+					priority
 				/>
 				<h3 className='text-dark-gray text-lg mt-2 font-semibold'>
 					How much money can your school save with the Inflation Reduction Act?

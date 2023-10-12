@@ -26,11 +26,13 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        toggleCalculating(true)
-        const result = await axios.get(`${BASE_URL}/address/${address}/${coordinatesLat}/${coordinatesLng}`)
-        setCalculatedSavings(result.data)
-        toggleCalculating(false)
-        toggleCalculated(Object.keys(result.data).length > 0)
+        if (address !== "") {
+            toggleCalculating(true)
+            const result = await axios.get(`${BASE_URL}/address/${address}/${coordinatesLat}/${coordinatesLng}`)
+            setCalculatedSavings(result.data)
+            toggleCalculating(false)
+            toggleCalculated(Object.keys(result.data).length > 0)
+        }
     }
     
     return (
