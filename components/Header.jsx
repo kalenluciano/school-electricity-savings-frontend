@@ -2,15 +2,15 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <header>
+    <header className='flex flex-col justify-center items-center mt-24 mb-10'>
 				<Image
-					src="/assets/rewiring_education_logo.png"
+					src="/assets/header_image.png"
 					alt="A green electrical plug and lightning bolt"
-					width={100}
-					height={100}
+					width={1000}
+					height={500}
+					className='w-1/3 h-fit'
 				/>
-				<h1>REWIRING EDUCATION</h1>
-				<h2>
+				<h2 className='text-dark-gray text-lg mt-2'>
 					How much money can your school save with the Inflation Reduction Act?
 				</h2>
     </header>

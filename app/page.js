@@ -13,7 +13,7 @@ export default function Home() {
 
 	return (
 		<main>
-			<div className=""></div>
+			<div className="w-screen h-5 bg-vibrant-green"></div>
 			<Header />
 			<div className="content">
 				<CalculatorForm

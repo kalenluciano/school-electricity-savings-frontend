@@ -6,30 +6,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px black solid; */
+  font-family: 'Public Sans';
 }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fefce8;
 }
 
 main {
   width: 100%;
 }
 
-header {
-  padding: 2rem;
-  background-color: #fef9c3;
-  text-align: center;
-}
-
 h2 {
-  font-size: large;
-  margin: .5rem 0 .5rem 0;
-  font-weight: 500
+  font-weight: 600;
 }
 
 h1 {
@@ -42,7 +33,6 @@ h1 {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  background-color: #fefce8;
 }
 
 .calculator-form {
