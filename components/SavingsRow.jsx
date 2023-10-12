@@ -52,8 +52,8 @@ const SavingsRow = ({savings, calculatedSavings}) => {
                 <Button className="bg-gray-blue text-dark-gray" onClick={handleChange} size={"sm"} colorScheme='gray' variant={"outline"}  rightIcon={<BsChevronDown/>}>More info</Button>
             </div>
             
-            {clicked && <div className="w-full">
-                <MoreInfoTabBar setCurrentTab={setCurrentTab} />
+            {clicked && <div className="w-full px-10 pt-4 pb-8">
+                <MoreInfoTabBar currentTab={currentTab} setCurrentTab={setCurrentTab} />
                 {currentTab === "overview" && <OverviewTab overview={savings.overview} calculatedSavings={calculatedSavings} relevantStats={relevantStats} />}
                 {currentTab === "incentives" &&<IncentivesTab taxIncentives={savings.tax_incentives} additionalGrants={savings.additional_grants} calculatedSavings={calculatedSavings} relevantStats={relevantStats} />}
                 {currentTab === "costs" && <CostsTab costs={savings.costs} calculatedSavings={calculatedSavings} />}
