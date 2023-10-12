@@ -9,6 +9,17 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			colors: {
+				'vibrant-green': '#21C34F',
+				'dark-green': '#09AB36',
+				'deep-blue': '#2364AA',
+				'light-blue': '#C6E2FA',
+				'gray-blue': '#E2E8F0',
+				'light-gray': '#F4F4F4',
+				'ink-black': '#00171F',
+				green: '#55C274',
+				red: '#FF3030',
+			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic':
