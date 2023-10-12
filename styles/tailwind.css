@@ -14,15 +14,3 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-.savings-description {
-  width: 100%;
-}
-
-.savings-more-info-section {
-  width: 100%;
-}
-
-.savings-more-info-section p {
-  padding: .5rem 0;
-}
