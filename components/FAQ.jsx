@@ -12,7 +12,7 @@ const FAQ = () => {
     }
 
     return (
-        <div className="w-2/4 flex flex-col items-center rounded-lg border border-white bg-white shadow-md my-10 relative">
+        <div className="w-2/4 flex flex-col items-center rounded-lg border border-white bg-white shadow-md my-10 relative min-w-[900px]">
             <div className="flex justify-between w-full py-8 px-10">
                 <h3 className="text-ink-black text-lg font-semibold">Frequently Asked Questions</h3>
                 <button className="more-info-button" onClick={handleChange}><Image src="/assets/AccordionIcon.svg" alt="Down arrow icon" width={24} height={24} className="text-ink-black"/></button>

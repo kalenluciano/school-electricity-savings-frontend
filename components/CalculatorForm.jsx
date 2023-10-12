@@ -41,7 +41,7 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
     }
     
     return (
-        <div className="w-2/4 h-64 py-8 px-10 flex flex-col justify-center items-center rounded-lg border border-white bg-white shadow-md">
+        <div className="w-2/4 h-64 py-8 px-10 flex flex-col justify-center items-center rounded-lg border border-white bg-white shadow-md min-w-[900px]">
         <div className="mb-4 flex flex-col items-start w-full">
             <h3 className="mb-4 text-lg text-ink-black font-semibold">Enter your school&apos;s information</h3>
             <form className="mt-4 flex flex-col items-start w-full" onSubmit={handleSubmit} >

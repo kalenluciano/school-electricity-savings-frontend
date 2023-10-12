@@ -4,7 +4,7 @@ import minimumSavingsInfo from '../data/minimumSavingsInfo.json'
 const SavingsTable = ({calculatedSavings, calculated}) => {
     
     return (
-        <div className='w-2/4 flex flex-col items-start rounded-lg bg-white shadow-md mb-10 relative'>
+        <div className='w-2/4 flex flex-col items-start rounded-lg bg-white shadow-md mb-10 relative min-w-[900px]'>
             <div className='flex flex-col items-start pb-4 pt-8 gap-y-1 rounded-t-lg bg-light-blue w-full px-10'>
                 <h3 className='text-lg font-semibold text-ink-black'>School Electrification Incentives</h3>
                 {calculated ? 
