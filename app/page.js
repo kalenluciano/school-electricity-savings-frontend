@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import CalculatorForm from '../components/CalculatorForm';
 import FAQ from '../components/FAQ';
 import SavingsTable from '../components/SavingsTable';
+import Footer from '@/components/Footer';
 import { useState } from 'react';
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
 					calculating={calculating}
 				/>
 			</div>
+			<Footer />
 		</main>
 	);
 }
