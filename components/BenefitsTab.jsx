@@ -1,6 +1,6 @@
 const BenefitsTab = ({benefits, calculatedSavings}) => {
   return (
-    <div className="mt-4">
+    <div className="mt-6">
       <div className="flex flex-col items-start self-stretch gap-y-1 p-4 rounded-lg bg-light-gray my-2">
         <h3 className="font-semibold text-ink-black text-lg">Financial Benefits</h3>
         <p className="text-dark-gray text-base font-normal">{benefits.financial}</p>

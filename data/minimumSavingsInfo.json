@@ -57,7 +57,7 @@
 			},
 			"additional_grants": null,
 			"costs": {
-				"value": ["~$1,000-$1.500 per kWh¹"],
+				"value": ["~$1,000 - $1.500 per kWh¹"],
 				"reference_point": "before tax incentives",
 				"explanation": "Costs depend on capacity, type, and brand. The values listed are for 2023 and before any tax credits or additional funding sources like grants are applied. Please reach out to your local energy companies for more accurate estimates.",
 				"footers": [
@@ -153,7 +153,7 @@
 			},
 			"additional_grants": null,
 			"costs": {
-				"value": ["~$600-1,000+ per kWh¹"],
+				"value": ["~$600 - 1,000+ per kWh¹"],
 				"reference_point": "before tax incentives",
 				"explanation": "Costs depend on capacity, type, and brand. The values listed are for 2023 and before any tax credits or additional funding sources like grants are applied. Please reach out to your local energy companies for more accurate estimates.",
 				"footers": [
@@ -243,9 +243,9 @@
 			],
 			"costs": {
 				"value": [
-					"Car: ~$40,000-80,000¹",
-					"Minibus (Type A): ~$200,000-350,000²",
-					"School Bus (Types C & D): ~$350,000-450,000²"
+					"Car: ~$40,000 - 80,000¹",
+					"Minibus (Type A): ~$200,000 - 350,000²",
+					"School Bus (Types C & D): ~$350,000 - 450,000²"
 				],
 				"reference_point": "before tax incentives",
 				"explanation": "Costs depend on capacity, type, and brand. The values listed are for new 2023 vehicles and before any tax credits or additional funding sources like grants are applied. Please reach out to your local vehicle dealer for more accurate estimates.",
@@ -312,7 +312,7 @@
 				}
 			],
 			"costs": {
-				"value": ["~$600-140,000 per vehicle¹"],
+				"value": ["~$600 - 140,000 per vehicle¹"],
 				"reference_point": "before tax incentives",
 				"explanation": "The infrastructure needed to charge vehicles, like electrical updates to the school and installing charging stations can range between roughly $600-140,000 per vehicle depending on a variety of factors like vehicle size, charging speed, existing electrical capacity, and overall project size.",
 				"footers": [
