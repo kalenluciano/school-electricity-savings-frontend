@@ -1,11 +1,10 @@
+import DataSourcesRow from "./DataSourcesRow"
+
 const DataSourcesTab = ({dataSources, calculatedSavings}) => {
   return (
-    <div>
+    <div className="mt-4">
       {dataSources.map((source, index) => (
-        <div key={index}>
-          <h2>{source.title}</h2>
-          <div dangerouslySetInnerHTML={{ __html: source.content }} />
-        </div>
+        <DataSourcesRow key={index} source={source}/>
       ))}
     </div>
   )

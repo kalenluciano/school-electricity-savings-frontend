@@ -14,3 +14,29 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.data-source-info a {
+  text-decoration: underline;
+}
+
+.data-source-info ol {
+  list-style: decimal;
+  list-style-position: outside;
+}
+
+.data-source-info ul {
+  list-style: disc;
+  list-style-position: outside;
+}
+
+.data-source-info p, .data-source-info li {
+  margin-block-end: 1em;
+}
+
+.data-source-info li {
+  margin-left: 1em
+}
+
+.data-source-info img {
+  margin-bottom: 1em;
+}
