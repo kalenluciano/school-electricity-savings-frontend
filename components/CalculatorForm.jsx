@@ -1,17 +1,20 @@
 'use client'
 
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import axios from 'axios'
 import {BASE_URL} from '../globals'
 import Autocomplete from "react-google-autocomplete";
 import { Button } from '@chakra-ui/react'
 import BsLightningFill from 'public/assets/BsLightningFill.jsx'
 
-const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculating }) => {
+const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculating, calculating }) => {
     const [address, setAddress] = useState("");
     const [coordinatesLat, setCoordinatesLat] = useState("%20")
     const [coordinatesLng, setCoordinatesLng] = useState("%20")
     const [placeSelected, togglePlaceSelected] = useState(false)
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const loadingText = ["Gathering census data...", "Checking what you qualify for...", "Adding up your tax savings..."]
 
     const handlePlaceSelected = async (place) => {
         if (place && place.formatted_address) {
@@ -58,7 +61,12 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
                 />
             </form>
         </div>
-        <Button className="search-button mt-5 rounded-lg bg-vibrant-green shadow-md p-4 px-6 text-white hover:bg-dark-green" colorScheme="gray" size="lg" variant='solid' leftIcon={false} rightIcon={<BsLightningFill/>}  onClick={handleSubmit}>CALCULATE</Button>
+        {calculating ?
+            <div className="flex flex-col justify-center items-center gap-y-2">
+                <BsLightningFill width={48} height={48} color="#21C34F" />
+                <p className="text-dark-green">{loadingText[currentIndex]}</p>
+            </div> : 
+            <Button className="search-button mt-5 rounded-lg bg-vibrant-green shadow-md p-4 px-6 text-white hover:bg-dark-green" colorScheme="gray" size="lg" variant='solid' leftIcon={false} rightIcon={<BsLightningFill width={16} height={17} color={"white"}/>}  onClick={handleSubmit}>CALCULATE</Button>}
         </div>
     )
 }

@@ -21,6 +21,7 @@ export default function Home() {
 					setCalculatedSavings={setCalculatedSavings}
 					toggleCalculated={toggleCalculated}
 					toggleCalculating={toggleCalculating}
+					calculating={calculating}
 				/>
 				<FAQ />
 				<SavingsTable
