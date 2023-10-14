@@ -1,10 +1,43 @@
 import IncentivesHeader from "./IncentivesHeader"
 import IncentivesSubHeader from "./IncentivesSubHeader"
 import Allowance from "./Allowance"
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
-const TaxIncentivesSection = ({taxIncentives, calculatedSavings, relevantStats}) => {
+const TaxIncentivesSection = ({taxIncentives, calculatedSavings, relevantStats, calculating}) => {
   const [clicked, setClick] = useState(false)
+  const [lowIncomeIndianLandStatus, setLowIncomeIndianLandStatus] = useState(false)
+  const [energyCommunityStatus, setEnergyCommunityStatus] = useState(false)
+  const [noDisqualifications, setNoDisqualifications] = useState(false)
+
+  const checkLowIncomeIndianLandStatus = () => {
+    if (relevantStats?.low_income_status || relevantStats?.indian_land_status) {
+      setLowIncomeIndianLandStatus(true)
+    } else {
+      setLowIncomeIndianLandStatus(false)
+    }
+  }
+
+  const checkEnergyCommunityStatus = () => {
+    if (relevantStats?.coal_mine_status || relevantStats?.fossil_fuel_employment_status || relevantStats?.brownfield_site_status) {
+      setEnergyCommunityStatus(true)
+    } else {
+      setEnergyCommunityStatus(false)
+    }
+  }
+
+  useEffect(() => {
+    checkLowIncomeIndianLandStatus()
+    checkEnergyCommunityStatus()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [relevantStats, calculating])
+
+  useEffect(() => {
+    if (lowIncomeIndianLandStatus && energyCommunityStatus) {
+      setNoDisqualifications(true)
+    } else {
+      setNoDisqualifications(false)
+    }
+  }, [lowIncomeIndianLandStatus, energyCommunityStatus])
 
   const handleClick = (e) => {
     setClick(!clicked)
@@ -27,15 +60,15 @@ const TaxIncentivesSection = ({taxIncentives, calculatedSavings, relevantStats})
           />
           <div className="mb-4 px-4 mx-4 flex flex-col items-start self-stretch rounded-md bg-light-gray">
             <div>
-              {taxIncentives.additional_credits.bonuses.map((allowance, index) => ((allowance.status || (allowance.allowance === "low_income_indian_land" && (relevantStats?.low_income_status || relevantStats?.indian_land_status)) || (allowance.allowance === "energy_community" && (relevantStats?.coal_mine_status || relevantStats?.fossil_fuel_employment_status || relevantStats?.brownfield_site_status ))) ? <div key={index}>
+              {taxIncentives.additional_credits.bonuses.map((allowance, index) => ((allowance.status || (allowance.allowance === "low_income_indian_land" && lowIncomeIndianLandStatus) || (allowance.allowance === "energy_community" && energyCommunityStatus)) ? <div key={index}>
                 <Allowance allowance={allowance} calculatedSavings={calculatedSavings} relevantStats={relevantStats} />
               </div> : null))}
             </div>
             <div>
-              <p>Your school likely doesn&apos;t qualify for:</p>
-              {taxIncentives.additional_credits.bonuses.map((allowance, index) => (allowance.status ? null : <div key={index}>
-                <Allowance allowance={allowance} calculatedSavings={calculatedSavings} relevantStats={relevantStats} />
-              </div> ))}
+              {(relevantStats === null || !noDisqualifications) && <p>Your school likely doesn&apos;t qualify for:</p>}
+              {taxIncentives.additional_credits.bonuses.map((allowance, index) => ((!allowance.status && (relevantStats === null || allowance.allowance === "us_material")) || ((allowance.allowance === "low_income_indian_land" && !lowIncomeIndianLandStatus) || (allowance.allowance === "energy_community" && !energyCommunityStatus) ) ? <div key={index}>
+                <Allowance allowance={allowance} calculatedSavings={calculatedSavings} relevantStats={relevantStats} /> 
+              </div> : null ))}
             </div>
           </div>
         </div>

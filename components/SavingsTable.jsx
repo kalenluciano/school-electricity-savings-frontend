@@ -1,7 +1,7 @@
 import SavingsRow from './SavingsRow'
 import minimumSavingsInfo from '../data/minimumSavingsInfo.json'
 
-const SavingsTable = ({calculatedSavings, calculated}) => {
+const SavingsTable = ({calculatedSavings, calculated, calculating}) => {
     
     return (
         <div className='w-2/4 flex flex-col items-start rounded-lg bg-white shadow-md mb-10 relative min-w-[900px]'>
@@ -20,7 +20,7 @@ const SavingsTable = ({calculatedSavings, calculated}) => {
                 </div>
 
                 <div className='w-full'>
-                    {minimumSavingsInfo.minimum_savings_info.map((savings) => <div key={savings.id}><SavingsRow savings={savings} calculatedSavings={calculatedSavings}/></div>)}
+                    {minimumSavingsInfo.minimum_savings_info.map((savings) => <div key={savings.id}><SavingsRow savings={savings} calculatedSavings={calculatedSavings} calculating={calculating} /></div>)}
                 </div>
                 
             </div>
