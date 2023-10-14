@@ -24,7 +24,7 @@
 				},
 				"additional_credits": {
 					"sub_heading": "Based on your location and census data, we think your school qualifies for the below additional incentives.",
-					"value": "0%",
+					"value": "10%",
 					"reference_point": "of equipment and installation costs",
 					"bonuses": [
 						{
@@ -120,7 +120,7 @@
 				},
 				"additional_credits": {
 					"sub_heading": "Based on your location and census data, we think your school qualifies for the below additional incentives.",
-					"value": "0%",
+					"value": "10%",
 					"reference_point": "of equipment and installation costs",
 					"bonuses": [
 						{
@@ -403,7 +403,7 @@
 				},
 				"additional_credits": {
 					"sub_heading": "Based on your location and census data, we think your school qualifies for the below additional incentives.",
-					"value": "0%",
+					"value": "10%",
 					"reference_point": "of equipment and installation costs",
 					"bonuses": [
 						{
