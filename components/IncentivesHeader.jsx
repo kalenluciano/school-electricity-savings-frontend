@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 
-const IncentivesHeader = ({ heading, subHeading, value,referencePoint, handleClick, clicked }) => (
-  <div className={`flex justify-center items-center self-stretch p-4 bg-deep-blue text-white gap-x-4 mt-6 ${!clicked && "rounded-lg"} ${value === "N/A" && "bg-light-gray"} ${clicked && "border-t border-r border-l border-gray-outline rounded-t-lg"}`}>
+const IncentivesHeader = ({ heading, subHeading, value, referencePoint, handleClick, clicked }) => (
+  <div className={`flex justify-center items-center self-stretch p-4 bg-deep-blue text-white gap-x-4 mt-6 ${!clicked && "rounded-lg"} ${value === "N/A" && "bg-light-gray"} ${clicked && "border-t border-r border-l border-gray-outline rounded-t-lg"} ${value !== "N/A" && "cursor-pointer"}`} onClick={handleClick}>
     <div className="flex justify-between items-center flex-1">
       <div className="flex flex-col items-start gap-y-1">
         <div className="flex items-center gap-x-1 relative">
@@ -19,7 +19,7 @@ const IncentivesHeader = ({ heading, subHeading, value,referencePoint, handleCli
         <p className={`text-base text-right ${value === "N/A" && "text-dark-gray"}`}>{referencePoint}</p>
       </div>
     </div>
-    {value !== "N/A" && (!clicked ? <Image src="/assets/IoChevronDown.svg" alt="Down arrow icon" width={24} height={24} className="cursor-pointer" onClick={handleClick}/> : <Image src="/assets/IoChevronUp.svg" alt="Up arrow icon" width={24} height={24} className="cursor-pointer" onClick={handleClick}/>)}
+    {value !== "N/A" && (!clicked ? <Image src="/assets/IoChevronDown.svg" alt="Down arrow icon" width={24} height={24} className="cursor-pointer" /> : <Image src="/assets/IoChevronUp.svg" alt="Up arrow icon" width={24} height={24} className="cursor-pointer" />)}
   </div>
 );
 
