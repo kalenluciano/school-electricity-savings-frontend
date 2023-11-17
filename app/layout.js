@@ -5,7 +5,7 @@ import { Providers } from './providers';
 const publicSans = Public_Sans({ subsets: ['latin'] });
 
 export const metadata = {
-	title: 'Rewiring Education',
+	title: 'Electrifying Education',
 	description:
 		'A tool to calculate savings for school districts converting to electricity',
 };
