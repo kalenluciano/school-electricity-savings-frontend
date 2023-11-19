@@ -6,7 +6,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Public Sans', sans-serif;
 }
 
 body {
@@ -29,7 +28,8 @@ body {
   list-style-position: outside;
 }
 
-.data-source-info p, .data-source-info li {
+.data-source-info p,
+.data-source-info li {
   margin-block-end: 1em;
 }
 
@@ -41,7 +41,8 @@ body {
   margin-bottom: 1em;
 }
 
-.allowance-content strong, .requirement-content strong {
+.allowance-content strong,
+.requirement-content strong {
   font-weight: 600;
   color: #00171F;
 }
@@ -51,7 +52,8 @@ body {
   text-decoration: underline
 }
 
-.allowance-content p, .requirement-content p {
+.allowance-content p,
+.requirement-content p {
   color: #494949;
   font-size: 1rem;
 }
