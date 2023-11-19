@@ -72,9 +72,9 @@ const SavingsRow = ({ savings, calculatedSavings, calculating, currentRow, handl
                 }
             </div>
 
-            {currentRow === savings.item && <div className="w-full px-8 pt-4 pb-8">
+            {currentRow === savings.item && <div className="w-full px-4 lg:px-8 pt-4 pb-8">
                 <MoreInfoTabBar currentTab={currentTab} setCurrentTab={setCurrentTab} />
-                {currentTab === "overview" && <OverviewTab overview={savings.overview} calculatedSavings={calculatedSavings} relevantStats={relevantStats} savingsImageSrc={savingsImageSrc} />}
+                {currentTab === "overview" && <OverviewTab overview={savings.overview} calculatedSavings={calculatedSavings} relevantStats={relevantStats} savingsImageSrc={savingsImageSrc} isWideScreen={isWideScreen} />}
                 {currentTab === "incentives" && <IncentivesTab taxIncentives={savings.tax_incentives} additionalGrants={savings.additional_grants} calculatedSavings={calculatedSavings} relevantStats={relevantStats} calculating={calculating} />}
                 {currentTab === "costs" && <CostsTab costs={savings.costs} calculatedSavings={calculatedSavings} />}
                 {currentTab === "benefits" && <BenefitsTab benefits={savings.benefits} calculatedSavings={calculatedSavings} />}

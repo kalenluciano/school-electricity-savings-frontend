@@ -13,8 +13,8 @@ export default function Home() {
 	const [calculating, toggleCalculating] = useState(false);
 
 	return (
-		<main className="bg-light-gray">
-			<div className="w-screen h-5 bg-vibrant-green"></div>
+		<main className="bg-light-gray w-full">
+			<div className="w-full h-5 bg-vibrant-green"></div>
 			<Header />
 			<div className="flex flex-col flex-wrap justify-center items-center">
 				<CalculatorForm
