@@ -57,3 +57,10 @@ body {
   color: #494949;
   font-size: 1rem;
 }
+
+@media (max-width: 1024px) {
+  .additional-grants {
+    display: flex;
+    column-gap: 0.5rem;
+  }
+}

@@ -63,7 +63,7 @@ const Allowance = ({ allowance, calculatedSavings, relevantStats }) => {
         <div className="allowance-content">{allowanceContent}</div>
         <p className="text-ink-black font-medium">{allowanceValue}</p>
       </div>
-      <div className="flex flex-col items-start self-stretch px-5 lg:px-10">
+      <div className="flex flex-col items-start self-stretch px-4 lg:px-8">
         {allowance.requirements.map((requirement, index) => (
           <Requirement key={index} requirement={requirement} calculatedSavings={calculatedSavings} relevantStats={relevantStats} />
         ))}

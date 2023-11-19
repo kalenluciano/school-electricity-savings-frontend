@@ -34,13 +34,13 @@ const OverviewTab = ({ overview, calculatedSavings, relevantStats, savingsImageS
 
             <div>
               <div className="flex items-center gap-x-1 relative">
-                <h3 className="text-ink-black font-normal text-base">Additional Grants</h3>
+                <h3 className="text-ink-black font-normal text-base whitespace-nowrap">Additional Grants</h3>
                 <div className="group">
                   <div className="group-hover:block hidden absolute bottom-10 start-28 flex flex-col items-center w-80 py-0.5 px-2 bg-light-blue rounded"><p className="text-sm text-ink-black">Additional grants were identified from the Inflation Reduction Act (IRA) and the Bipartisan Infrastructure Law (BIL). Note that this may not capture all available funding opportunities. </p><Image src="/assets/triangle.png" alt="A triangle pointing down" width={16} height={8} className="absolute top-[5.125rem] start-4" /></div>
                   <AiOutlineQuestionCircle className="text-ink-black w-3 h-3" />
                 </div>
               </div>
-              <div className="lg:block flex gap-x-2">
+              <div className="additional-grants">
                 <p className="text-sm lg:text-xl font-semibold text-ink-black">{relevantStats?.available_grants !== undefined ? relevantStats?.available_grants : overview.grants}</p>
                 <p className="text-sm text-dark-gray font-normal">available grants</p>
               </div>
