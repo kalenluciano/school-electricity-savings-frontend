@@ -11,7 +11,7 @@ import DataSourcesTab from "./DataSourcesTab"
 import MoreInfoTabBar from "./MoreInfoTabBar"
 
 const SavingsRow = ({ savings, calculatedSavings, calculating, currentRow, handleChange, currentTab, setCurrentTab }) => {
-    const [isWideScreen, setIsWideScreen] = useState(window.innerWidth >= 1024);
+    const [isWideScreen, setIsWideScreen] = useState(true);
 
     let relevantStats = null
     let savingsImageSrc = null
