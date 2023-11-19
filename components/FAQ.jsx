@@ -23,7 +23,7 @@ const FAQ = () => {
                     <div className="py-4 px-10">
                         {faqInfo.map((faq, index) => (<div key={index} className="py-4 flex flex-col items-start gap-y-2.5">
                             <h4 className="text-base text-ink-black font-semibold">{faq.question}</h4>
-                            <p className="text-sm font-normal text-dark-gray">{faq.answer}</p>
+                            <p className="text-base leading-5 font-normal text-dark-gray">{faq.answer}</p>
                         </div>))}
                     </div>
                 </div>

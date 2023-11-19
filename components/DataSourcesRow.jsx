@@ -16,7 +16,7 @@ const DataSourcesRow = ({ source }) => {
       </div>
       {clicked && <div >
         <div className="bg-gray-outline h-px w-full" />
-        <div className="p-4 text-sm text-dark-gray data-source-info" dangerouslySetInnerHTML={{ __html: source.content }} /></div>}
+        <div className="p-4 text-base leading-5 text-dark-gray data-source-info" dangerouslySetInnerHTML={{ __html: source.content }} /></div>}
     </div>
   )
 }
