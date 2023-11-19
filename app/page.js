@@ -16,7 +16,7 @@ export default function Home() {
 		<main className="bg-light-gray">
 			<div className="w-screen h-5 bg-vibrant-green"></div>
 			<Header />
-			<div className="flex flex-col flex-wrapjustify-center items-center">
+			<div className="flex flex-col flex-wrap justify-center items-center">
 				<CalculatorForm
 					setCalculatedSavings={setCalculatedSavings}
 					toggleCalculated={toggleCalculated}
