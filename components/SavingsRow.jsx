@@ -10,7 +10,7 @@ import BenefitsTab from "./BenefitsTab"
 import DataSourcesTab from "./DataSourcesTab"
 import MoreInfoTabBar from "./MoreInfoTabBar"
 
-const SavingsRow = ({ savings, calculatedSavings, calculating }) => {
+const SavingsRow = ({ savings, calculatedSavings, calculating, currentRow, handleChange, currentTab, setCurrentTab }) => {
     let relevantStats = null
     let savingsImageSrc = null
 
@@ -44,22 +44,15 @@ const SavingsRow = ({ savings, calculatedSavings, calculating }) => {
             break;
     }
 
-    const [currentTab, setCurrentTab] = useState('overview')
-    const [clicked, toggleClicked] = useState(false)
-
-    const handleChange = () => {
-        toggleClicked(!clicked)
-    }
-
     return (
-        <div className={`${clicked && "border-b border-gray-outline shadow-md"}`}>
-            <div onClick={handleChange} className={`flex items-center justify-space-between flex-wrap py-3 px-10 cursor-pointer border-b border-solid border-gray-outline hover:bg-light-gray duration-300 ease-in-out ${clicked && "bg-light-gray"}`}>
+        <div className={`${currentRow === savings.item && "border-b border-gray-outline shadow-md"}`}>
+            <div onClick={() => handleChange(savings.item)} className={`flex items-center justify-space-between flex-wrap py-3 px-10 cursor-pointer border-b border-solid border-gray-outline hover:bg-light-gray duration-300 ease-in-out ${currentRow === savings.item && "bg-light-gray"}`}>
                 <p className="w-3/5 font-normal text-base text-ink-black">{savings.item}</p>
                 <p className="w-1/4 font-semibold text-base text-ink-black">{relevantStats?.total_tax_credit !== undefined ? relevantStats?.total_tax_credit + "%" : savings.amount}</p>
-                <Button className="bg-gray-blue text-dark-gray" size={"sm"} colorScheme='gray' variant={"outline"} rightIcon={!clicked ? <BsChevronDown /> : <BsChevronUp />}>More info</Button>
+                <Button className="bg-gray-blue text-dark-gray" size={"sm"} colorScheme='gray' variant={"outline"} rightIcon={currentRow !== savings.item ? <BsChevronDown /> : <BsChevronUp />}>More info</Button>
             </div>
 
-            {clicked && <div className="w-full px-8 pt-4 pb-8">
+            {currentRow === savings.item && <div className="w-full px-8 pt-4 pb-8">
                 <MoreInfoTabBar currentTab={currentTab} setCurrentTab={setCurrentTab} />
                 {currentTab === "overview" && <OverviewTab overview={savings.overview} calculatedSavings={calculatedSavings} relevantStats={relevantStats} savingsImageSrc={savingsImageSrc} />}
                 {currentTab === "incentives" && <IncentivesTab taxIncentives={savings.tax_incentives} additionalGrants={savings.additional_grants} calculatedSavings={calculatedSavings} relevantStats={relevantStats} calculating={calculating} />}
