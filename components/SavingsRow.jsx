@@ -53,7 +53,7 @@ const SavingsRow = ({ savings, calculatedSavings, calculating }) => {
 
     return (
         <div className={`${clicked && "border-b border-gray-outline shadow-md"}`}>
-            <div onClick={handleChange} className={`flex items-center justify-space-between flex-wrap py-3 px-10 cursor-pointer ${clicked && "bg-gray-outline"}`}>
+            <div onClick={handleChange} className={`flex items-center justify-space-between flex-wrap py-3 px-10 cursor-pointer border-b border-solid border-gray-outline hover:bg-light-gray duration-300 ease-in-out ${clicked && "bg-light-gray"}`}>
                 <p className="w-3/5 font-normal text-base text-ink-black">{savings.item}</p>
                 <p className="w-1/4 font-semibold text-base text-ink-black">{relevantStats?.total_tax_credit !== undefined ? relevantStats?.total_tax_credit + "%" : savings.amount}</p>
                 <Button className="bg-gray-blue text-dark-gray" size={"sm"} colorScheme='gray' variant={"outline"} rightIcon={!clicked ? <BsChevronDown /> : <BsChevronUp />}>More info</Button>
