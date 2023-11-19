@@ -9,7 +9,7 @@ const DataSourcesRow = ({ source }) => {
   }
 
   return (
-    <div className="rounded-lg bg-light-gray my-2">
+    <div className="rounded-lg bg-light-gray my-6">
       <div className="flex self-stretch justify-between items-center p-4 cursor-pointer" onClick={handleClick}>
         <h3 className="text-lg text-ink-black font-semibold">{source.title}</h3>
         {!clicked ? <Image src="/assets/IoChevronDown.svg" alt="Down arrow icon" width={24} height={24} className="cursor-pointer" /> : <Image src="/assets/IoChevronUp.svg" alt="Up arrow icon" width={24} height={24} className="cursor-pointer" />}
