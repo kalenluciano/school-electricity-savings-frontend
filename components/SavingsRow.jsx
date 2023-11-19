@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from '@chakra-ui/react'
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs'
 import OverviewTab from "./OverviewTab"
@@ -11,6 +11,8 @@ import DataSourcesTab from "./DataSourcesTab"
 import MoreInfoTabBar from "./MoreInfoTabBar"
 
 const SavingsRow = ({ savings, calculatedSavings, calculating, currentRow, handleChange, currentTab, setCurrentTab }) => {
+    const [isWideScreen, setIsWideScreen] = useState(window.innerWidth >= 1024);
+
     let relevantStats = null
     let savingsImageSrc = null
 
@@ -44,12 +46,30 @@ const SavingsRow = ({ savings, calculatedSavings, calculating, currentRow, handl
             break;
     }
 
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 1024) {
+                setIsWideScreen(true);
+            } else {
+                setIsWideScreen(false);
+            }
+        };
+        window.addEventListener("resize", handleResize);
+        handleResize();
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
     return (
         <div className={`${currentRow === savings.item && "border-b border-gray-outline shadow-md"}`}>
-            <div onClick={() => handleChange(savings.item)} className={`flex items-center justify-space-between flex-wrap py-3 px-10 cursor-pointer border-b border-solid border-gray-outline hover:bg-light-gray duration-300 ease-in-out ${currentRow === savings.item && "bg-light-gray"}`}>
-                <p className="w-3/5 font-normal text-base text-ink-black">{savings.item}</p>
-                <p className="w-1/4 font-semibold text-base text-ink-black">{relevantStats?.total_tax_credit !== undefined ? relevantStats?.total_tax_credit + "%" : savings.amount}</p>
-                <Button className="bg-gray-blue text-dark-gray" size={"sm"} colorScheme='gray' variant={"outline"} rightIcon={currentRow !== savings.item ? <BsChevronDown /> : <BsChevronUp />}>More info</Button>
+            <div onClick={() => handleChange(savings.item)} className={`flex items-center justify-space-between flex-wrap py-3 lg:px-10 px-4 cursor-pointer border-b border-solid border-gray-outline hover:bg-light-gray duration-300 ease-in-out ${currentRow === savings.item && "bg-light-gray"}`}>
+                <p className="w-3/5 font-normal lg:text-base text-sm text-ink-black">{savings.item}</p>
+                <p className="w-1/4 font-semibold lg:text-base text-sm text-ink-black">{relevantStats?.total_tax_credit !== undefined ? relevantStats?.total_tax_credit + "%" : savings.amount}</p>
+                {isWideScreen ?
+                    <Button className="bg-gray-blue text-dark-gray" size={"sm"} colorScheme='gray' variant={"outline"} rightIcon={currentRow !== savings.item ? <BsChevronDown /> : <BsChevronUp />}>More info</Button> :
+                    <Button className="bg-gray-blue text-dark-gray" size={"sm"} colorScheme='gray' variant={"outline"}>{currentRow !== savings.item ? <BsChevronDown /> : <BsChevronUp />}</Button>
+                }
             </div>
 
             {currentRow === savings.item && <div className="w-full px-8 pt-4 pb-8">
