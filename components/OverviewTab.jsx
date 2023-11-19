@@ -5,13 +5,13 @@ const OverviewTab = ({ overview, calculatedSavings, relevantStats, savingsImageS
 
   return (
     <div className="mt-6">
-      <div className={`flex items-start self-stretch gap-x-4 ${!isWideScreen && "flex-col gap-y-4"}`}>
+      <div className={`flex items-start self-stretch gap-x-4 lg:flex-row flex-col lg:gap-y-0 gap-y-4"}`}>
         {!isWideScreen && <Image src={savingsImageSrc} alt="" width={280} height={170} className="w-full object-contain object-center" />}
 
         <div className="flex flex-col items-start gap-y-4 lg:gap-y-8">
           <p className="self-stretch text-ink-black text-base font-normal">{overview.intro}</p>
 
-          <div className={`flex items-start gap-x-6 ${!isWideScreen && "flex-col gap-y-4"}`}>
+          <div className="flex items-start gap-x-6 lg:flex-row flex-col lg:gap-y-0 gap-y-4">
             <div>
               <h3 className="text-ink-black font-normal text-base">Average Life Span</h3>
               <p className="text-sm lg:text-xl font-semibold text-ink-black">{overview.life_span}</p>
@@ -26,7 +26,7 @@ const OverviewTab = ({ overview, calculatedSavings, relevantStats, savingsImageS
                 </div>
 
               </div>
-              <div className={`${!isWideScreen && "flex gap-x-2"}`}>
+              <div className="lg:block flex gap-x-2">
                 <p className="text-sm lg:text-xl font-semibold text-ink-black">{relevantStats?.total_tax_credit !== undefined ? relevantStats.total_tax_credit + "%" : overview.tax_credits}</p>
                 <p className="text-sm text-dark-gray font-normal">of equipment and installation cost</p>
               </div>
@@ -40,7 +40,7 @@ const OverviewTab = ({ overview, calculatedSavings, relevantStats, savingsImageS
                   <AiOutlineQuestionCircle className="text-ink-black w-3 h-3" />
                 </div>
               </div>
-              <div className={`${!isWideScreen && "flex gap-x-2"}`}>
+              <div className="lg:block flex gap-x-2">
                 <p className="text-sm lg:text-xl font-semibold text-ink-black">{relevantStats?.available_grants !== undefined ? relevantStats?.available_grants : overview.grants}</p>
                 <p className="text-sm text-dark-gray font-normal">available grants</p>
               </div>
@@ -55,7 +55,7 @@ const OverviewTab = ({ overview, calculatedSavings, relevantStats, savingsImageS
         <h3 className="text-base text-ink-black font-medium">How does it work?</h3>
         <p className="text-base text-dark-gray font-normal">{overview.explanation}</p>
       </div>
-    </div>
+    </div >
   )
 }
 
