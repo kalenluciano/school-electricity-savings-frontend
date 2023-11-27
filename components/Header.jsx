@@ -8,7 +8,7 @@ const Header = () => {
 				alt="A green electrical plug and lightning bolt"
 				width={1000}
 				height={500}
-				className='w-2/4 lg:w-1/3 h-fit'
+				className='w-4/5 lg:w-1/3 h-fit'
 				priority
 			/>
 			<h3 className='text-md text-dark-gray lg:text-lg mt-2 font-semibold text-center px-5'>
