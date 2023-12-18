@@ -1,5 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react';
-import { Public_Sans } from '@next/font/google';
+import { Public_Sans } from "next/font/google";
 
 const publicSans = Public_Sans({ subsets: ['latin'], variable: '--font-public-sans' });
 
