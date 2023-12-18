@@ -2,7 +2,7 @@ import Image from "next/image"
 import { useState } from "react"
 
 const DataSourcesRow = ({ source }) => {
-  const [clicked, toggleClick] = useState(false)
+  const [clicked, toggleClick] = useState(true)
 
   const handleClick = (e) => {
     toggleClick(!clicked)

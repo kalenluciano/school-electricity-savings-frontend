@@ -4,7 +4,7 @@ import Allowance from "./Allowance"
 import { useState, useEffect } from 'react'
 
 const TaxIncentivesSection = ({ taxIncentives, calculatedSavings, relevantStats, calculating }) => {
-  const [clicked, setClick] = useState(false)
+  const [clicked, setClick] = useState(true)
   const [lowIncomeIndianLandStatus, setLowIncomeIndianLandStatus] = useState(false)
   const [energyCommunityStatus, setEnergyCommunityStatus] = useState(false)
   const [noDisqualifications, setNoDisqualifications] = useState(false)

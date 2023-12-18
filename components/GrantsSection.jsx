@@ -3,7 +3,7 @@ import Allowance from "./Allowance"
 import { useState } from 'react'
 
 const GrantsSection = ({ additionalGrants, calculatedSavings, relevantStats }) => {
-  const [clicked, setClick] = useState(false)
+  const [clicked, setClick] = useState(true)
 
   const handleClick = (e) => {
     setClick(!clicked)
