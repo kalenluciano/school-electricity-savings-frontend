@@ -6,6 +6,7 @@ import { BASE_URL } from '../globals'
 import Autocomplete from "react-google-autocomplete";
 import { Button } from '@chakra-ui/react'
 import BsLightningFill from 'public/assets/BsLightningFill.jsx'
+import { HiOutlineChevronDoubleDown } from "react-icons/hi";
 
 const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculating, calculating }) => {
     const [address, setAddress] = useState("");
@@ -44,9 +45,9 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
     }
 
     return (
-        <div className="w-11/12 h-64 py-8 px-10 flex flex-col justify-center items-center rounded-lg border border-white bg-white shadow-md lg:w-2/4">
+        <div className="w-11/12 h-96 py-8 px-10 flex flex-col justify-center items-center rounded-lg border border-white bg-white shadow-md lg:w-2/4 lg:h-72">
             <div className="mb-4 flex flex-col items-start w-full">
-                <h3 className="mb-4 text-lg text-ink-black font-semibold">Enter your school&apos;s information</h3>
+                <h3 className="mb-4 text-lg text-ink-black font-semibold">Enter your school&apos;s information to find out which federal incentives it qualifies for.</h3>
                 <form className="mt-4 flex flex-col items-start w-full" onSubmit={handleSubmit} >
                     <label htmlFor="address" className="text-dark-gray font-normal text-base">Street address</label>
                     <Autocomplete className="px-3 rounded border border-gray-400 bg-white mt-2 w-full h-10 flex flex-col items-center justify-center text-gray-500"
@@ -65,6 +66,7 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
                 <div className="flex flex-col justify-center items-center gap-y-2">
                     <BsLightningFill width={48} height={48} color="#21C34F" />
                     <p className="text-dark-green">{loadingText[currentIndex]}</p>
+                    <HiOutlineChevronDoubleDown color="#21C34F" className="h-6 w-6" />
                 </div> :
                 <Button className="search-button mt-5 rounded-lg bg-vibrant-green shadow-md p-4 px-6 text-white hover:bg-dark-green" colorScheme="gray" size="lg" variant='solid' leftIcon={false} rightIcon={<BsLightningFill width={16} height={17} color={"white"} />} onClick={handleSubmit}>CALCULATE</Button>}
         </div>
