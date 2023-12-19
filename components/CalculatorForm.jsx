@@ -26,7 +26,6 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
                 setCoordinatesLng(place.geometry.location.lng)
             }
         }
-
     }
 
     const handleInputChange = (e) => {
@@ -44,8 +43,30 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
         }
     }
 
+    const rotateLoadingText = () => {
+        const nextIndex = (currentIndex + 1) % loadingText.length;
+        setCurrentIndex(nextIndex);
+    };
+
+    useEffect(() => {
+        let intervalId;
+
+        if (calculating) {
+            intervalId = setInterval(() => {
+                rotateLoadingText();
+            }, 1500);
+        } else {
+            setCurrentIndex(0)
+            clearInterval(intervalId);
+        }
+
+        return () => {
+            clearInterval(intervalId)
+        }
+    }, [calculating, currentIndex]);
+
     return (
-        <div className="w-11/12 h-96 py-8 px-10 flex flex-col justify-center items-center rounded-lg border border-white bg-white shadow-md lg:w-2/4 lg:h-72">
+        <div className="w-11/12 h-96 py-8 px-10 flex flex-col justify-center items-center rounded-lg border border-white bg-white shadow-md lg:w-2/4 lg:h-80">
             <div className="mb-4 flex flex-col items-start w-full">
                 <h3 className="mb-4 text-lg text-ink-black font-semibold">Enter your school&apos;s information to find out which federal incentives it qualifies for.</h3>
                 <form className="mt-4 flex flex-col items-start w-full" onSubmit={handleSubmit} >
