@@ -66,7 +66,7 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
     }, [calculating, currentIndex]);
 
     return (
-        <div className="w-11/12 h-96 py-8 px-10 flex flex-col justify-center items-center rounded-lg border border-white bg-white shadow-md lg:w-2/4 lg:h-80">
+        <div className="w-11/12 h-fit py-8 px-10 flex flex-col justify-center items-center rounded-lg border border-white bg-white shadow-md lg:w-2/4 lg:h-fit">
             <div className="mb-4 flex flex-col items-start w-full">
                 <h3 className="mb-4 text-lg text-ink-black font-semibold">Enter your school&apos;s information to find out which federal incentives it qualifies for.</h3>
                 <form className="mt-4 flex flex-col items-start w-full" onSubmit={handleSubmit} >
@@ -85,9 +85,11 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
             </div>
             {calculating ?
                 <div className="flex flex-col justify-center items-center gap-y-2">
-                    <BsLightningFill width={48} height={48} color="#21C34F" />
+                    <div className="h-24 w-24 border-8 border-vibrant-green rounded-full flex justify-center items-center">
+                        <BsLightningFill width={48} height={48} color="#09AB36" />
+                    </div>
                     <p className="text-dark-green">{loadingText[currentIndex]}</p>
-                    <HiOutlineChevronDoubleDown color="#21C34F" className="h-6 w-6" />
+                    <HiOutlineChevronDoubleDown color="#09AB36" className="h-6 w-6" />
                 </div> :
                 <Button className="search-button mt-5 rounded-lg bg-vibrant-green shadow-md p-4 px-6 text-white hover:bg-dark-green" colorScheme="gray" size="lg" variant='solid' leftIcon={false} rightIcon={<BsLightningFill width={16} height={17} color={"white"} />} onClick={handleSubmit}>CALCULATE</Button>}
         </div>
