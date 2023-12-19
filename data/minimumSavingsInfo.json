@@ -57,7 +57,7 @@
 			},
 			"additional_grants": null,
 			"costs": {
-				"value": ["~$1,000 - $1.500 per kWh¹"],
+				"value": ["~$1,000 - $1,500 per kWh¹"],
 				"reference_point": "before tax incentives",
 				"explanation": "Costs depend on capacity, type, and brand. The values listed are for 2023 and before any tax credits or additional funding sources like grants are applied. Please reach out to your local energy companies for more accurate estimates.",
 				"footers": [
