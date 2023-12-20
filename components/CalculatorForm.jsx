@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from "react"
+import Image from "next/image"
 import axios from 'axios'
 import { BASE_URL } from '../globals'
 import Autocomplete from "react-google-autocomplete";
@@ -85,9 +86,7 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
             </div>
             {calculating ?
                 <div className="flex flex-col justify-center items-center gap-y-2">
-                    <div className="h-24 w-24 border-8 border-vibrant-green rounded-full flex justify-center items-center">
-                        <BsLightningFill width={48} height={48} color="#09AB36" />
-                    </div>
+                    <Image src={"/assets/LoadingIcon" + ((currentIndex + 1) * 25) + ".svg"} alt="Lightning loading icon" width={48} height={48} className="h-24 w-24" />
                     <p className="text-dark-green">{loadingText[currentIndex]}</p>
                     <HiOutlineChevronDoubleDown color="#09AB36" className="h-6 w-6" />
                 </div> :
