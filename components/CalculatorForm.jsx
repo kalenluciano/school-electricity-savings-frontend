@@ -6,7 +6,7 @@ import axios from 'axios'
 import { BASE_URL } from '../globals'
 import Autocomplete from "react-google-autocomplete";
 import { Button } from '@chakra-ui/react'
-import BsLightningFill from 'public/assets/BsLightningFill.jsx'
+import BsLightningFill from './BsLightningFill.jsx'
 import { HiOutlineChevronDoubleDown } from "react-icons/hi";
 
 const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculating, calculating }) => {
