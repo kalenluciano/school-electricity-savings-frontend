@@ -19,7 +19,7 @@ const SavingsTable = ({ calculatedSavings, calculated, calculating }) => {
     }
 
     return (
-        <div className='w-11/12 flex flex-col items-start rounded-lg bg-white shadow-md mb-10 relative lg:w-2/4'>
+        <div className='w-11/12 flex flex-col items-start rounded-lg bg-white shadow-md mb-10 relative lg:w-4/6'>
             <div className='flex flex-col items-start pb-4 pt-8 gap-y-1 rounded-t-lg bg-light-blue w-full lg:px-8 px-4'>
                 <h3 className='text-lg font-semibold text-ink-black'>School Electrification Incentives</h3>
                 {calculated ?

@@ -67,9 +67,9 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
     }, [calculating, currentIndex]);
 
     return (
-        <div className="w-11/12 h-fit py-8 px-10 flex flex-col justify-center items-center rounded-lg border border-white bg-white shadow-md lg:w-2/4 lg:h-fit">
+        <div className="w-11/12 h-fit py-8 px-10 flex flex-col justify-center items-center rounded-lg border border-white bg-white shadow-md lg:w-4/6 lg:h-fit">
             <div className="mb-4 flex flex-col items-start w-full">
-                <h3 className="mb-4 text-lg text-ink-black font-semibold">Enter your school&apos;s information to find out which federal incentives it qualifies for.</h3>
+                <h3 className="mb-4 text-lg text-ink-black font-semibold">Enter your school&apos;s information and expand the rows below to find out which federal incentives it qualifies for.</h3>
                 <form className="mt-4 flex flex-col items-start w-full" onSubmit={handleSubmit} >
                     <label htmlFor="address" className="text-dark-gray font-normal text-base">Street address</label>
                     <Autocomplete className="px-3 rounded border border-gray-400 bg-white mt-2 w-full h-10 flex flex-col items-center justify-center text-gray-500"
