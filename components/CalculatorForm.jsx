@@ -67,7 +67,7 @@ const CalculatorForm = ({ setCalculatedSavings, toggleCalculated, toggleCalculat
     }, [calculating, currentIndex]);
 
     return (
-        <div className="w-11/12 h-fit py-8 px-10 flex flex-col justify-center items-center rounded-lg border border-white bg-white shadow-md lg:w-4/6 lg:h-fit">
+        <div className="w-11/12 h-fit py-8 px-10 flex flex-col justify-center items-center rounded-lg border border-white bg-white shadow-md lg:w-3/5 lg:h-fit">
             <div className="mb-4 flex flex-col items-start w-full">
                 <h3 className="mb-4 text-lg text-ink-black font-semibold">Enter your school&apos;s information and expand the rows below to find out which federal incentives it qualifies for.</h3>
                 <form className="mt-4 flex flex-col items-start w-full" onSubmit={handleSubmit} >

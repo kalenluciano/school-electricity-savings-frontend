@@ -12,7 +12,7 @@ const FAQ = () => {
     }
 
     return (
-        <div className="w-11/12 flex flex-col items-center rounded-lg border border-white bg-white shadow-md my-10 relative lg:w-4/6">
+        <div className="w-11/12 flex flex-col items-center rounded-lg border border-white bg-white shadow-md my-10 relative lg:w-3/5">
             <div onClick={handleChange} className="flex justify-between w-full py-8 px-10 cursor-pointer">
                 <h3 className="text-ink-black text-lg font-semibold">Frequently Asked Questions</h3>
                 <button className="more-info-button">{!clicked ? <Image src="/assets/AccordionIcon.svg" alt="Down arrow icon" width={24} height={24} className="text-ink-black" /> : <Image src="/assets/AccordionUpIcon.svg" alt="Up arrow icon" width={24} height={24} className="text-ink-black" />}</button>
