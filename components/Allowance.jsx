@@ -38,17 +38,17 @@ const Allowance = ({ allowance, calculatedSavings, relevantStats }) => {
       break;
     case 'clean_school_bus':
       allowanceContent = (
-        <p><strong><a href='https://www.epa.gov/cleanschoolbus/clean-school-bus-program-grants' target='_blank' rel='noopener noreferrer'>EPA Clean School Bus Program:</a></strong> All schools can apply for funding from this program to help transition to zero-emission school buses, with $500 million available per fiscal year for the next 5 years. Priority will be given to schools leveraging additional funding opportunities as well as:</p>
+        <p><strong><a href='https://www.epa.gov/cleanschoolbus/clean-school-bus-program-grants' target='_blank' rel='noopener noreferrer'>EPA Clean School Bus Program:</a></strong> All schools can apply for funding from this program to help transition to zero-emission school buses, with $500 million available per fiscal year until 2026. Applications are only open for a few months at a time for each year. Priority will be given to schools leveraging additional funding opportunities as well as:</p>
       );
       break;
     case 'support_for_state_energy_programs':
       allowanceContent = (
-        <p><strong><a href='https://www.energy.gov/scep/state-energy-program-0' target='_blank' rel='noopener noreferrer'>Support for State Energy Programs and Reducing Transportation Emissions Program:</a></strong> Under this program, the federal government will distribute $500 million to all 50 states (and D.C.) based on a distribution formula. The funds can be used by State Energy Offices to develop and implement clean energy programs and projects. State energy plans include programs to reduce carbon emissions in the transportation sector and accelerate the use of alternative transportation fuels, including the electrification of school buses.</p>
+        <p><strong><a href='https://www.energy.gov/scep/state-energy-program-0' target='_blank' rel='noopener noreferrer'>Support for State Energy Programs and Reducing Transportation Emissions Program:</a></strong> Under this program, the federal government will distribute $500 million to all 50 states (and D.C.) based on a distribution formula through fiscal year 2026. The funds can be used by State Energy Offices to develop and implement clean energy programs and projects. State energy plans include programs to reduce carbon emissions in the transportation sector and accelerate the use of alternative transportation fuels, including the electrification of school buses.</p>
       );
       break;
     case 'national_electric_vehicle_formula':
       allowanceContent = (
-        <p><strong><a href='https://afdc.energy.gov/laws/12744' target='_blank' rel='noopener noreferrer'>National Electric Vehicle Formula Program:</a></strong>Under this program, the federal government will distribute $5 billion to all 50 states (and D.C.) based on a distribution formula. The funds can be used by State Departments of Transportation to deploy electric vehicle charging infrastructure, including at or near schools, which can support the use of electric school buses and electric passenger vehicles. Priority will be given to projects in rural, underserved, and disadvantaged communities, but each state must develop its own plan to identify and support these communities.</p>
+        <p><strong><a href='https://afdc.energy.gov/laws/12744' target='_blank' rel='noopener noreferrer'>National Electric Vehicle Formula Program:</a></strong>Under this program, the federal government will distribute $5 billion to all 50 states (and D.C.) based on a distribution formula through fiscal year 2026. The funds can be used by State Departments of Transportation to deploy electric vehicle charging infrastructure, including at or near schools, which can support the use of electric school buses and electric passenger vehicles. Priority will be given to projects in rural, underserved, and disadvantaged communities, but each state must develop its own plan to identify and support these communities.</p>
       );
       break;
     default:
