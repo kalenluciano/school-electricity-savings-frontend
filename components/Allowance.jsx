@@ -38,7 +38,7 @@ const Allowance = ({ allowance, calculatedSavings, relevantStats }) => {
       break;
     case 'clean_school_bus':
       allowanceContent = (
-        <p><strong><a href='https://www.epa.gov/cleanschoolbus/clean-school-bus-program-grants' target='_blank' rel='noopener noreferrer'>EPA Clean School Bus Program:</a></strong> All schools can apply for funding from this program to help transition to zero-emission school buses, with $500 million available per fiscal year until 2026. Applications are only open for a few months at a time for each year. Priority will be given to schools leveraging additional funding opportunities as well as:</p>
+        <p><strong><a href='https://www.epa.gov/cleanschoolbus/clean-school-bus-program-grants' target='_blank' rel='noopener noreferrer'>EPA Clean School Bus Program:</a></strong> All schools can apply for funding from this program to help transition to zero-emission school buses, with $500 million available per fiscal year through 2026. Applications are only open for a few months at a time for each year. Priority will be given to schools leveraging additional funding opportunities as well as:</p>
       );
       break;
     case 'support_for_state_energy_programs':
